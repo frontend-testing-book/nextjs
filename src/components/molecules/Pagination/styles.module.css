@@ -1,0 +1,41 @@
+.pagination {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  line-height: 0;
+}
+
+.pagination li {
+  margin: 0 4px;
+  user-select: none;
+}
+
+.pagination li a {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 48px;
+  height: 48px;
+  border-radius: 24px;
+  border: 2px solid var(--gray);
+}
+
+.pagination li a:hover {
+  background-color: var(--dark-navy);
+}
+
+.pagination li a[aria-current="page"] {
+  background-color: var(--dark-navy);
+}
+
+@media screen and (max-width: 767px) {
+  .pagination li {
+    margin: 0 2px;
+  }
+
+  .pagination li a {
+    width: 36px;
+    height: 36px;
+    font-size: 1.2rem;
+  }
+}

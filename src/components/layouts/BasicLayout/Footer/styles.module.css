@@ -1,0 +1,20 @@
+.footer {
+  height: 160px;
+  background-color: var(--dark-navy);
+}
+
+.copyright {
+  padding: var(--pc-inner-padding);
+  text-align: center;
+}
+
+@media screen and (max-width: 767px) {
+  .footer {
+    height: 80px;
+  }
+
+  .copyright {
+    padding: 32px;
+    text-align: center;
+  }
+}

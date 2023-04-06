@@ -1,0 +1,8 @@
+.module {
+  font-size: 1.2rem;
+  color: var(--light-gray);
+}
+
+.module[data-invalid="true"] {
+  color: var(--orange);
+}

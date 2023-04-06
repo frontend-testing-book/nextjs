@@ -1,0 +1,22 @@
+.header {
+  display: flex;
+  margin-bottom: 16px;
+}
+
+.heading {
+  flex-grow: 1;
+}
+
+.orderBy {
+  margin-right: 12px;
+}
+
+.search {
+  width: 240px;
+}
+
+@media screen and (max-width: 767px) {
+  .header {
+    margin-bottom: 0px;
+  }
+}

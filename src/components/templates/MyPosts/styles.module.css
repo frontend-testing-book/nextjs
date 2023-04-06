@@ -1,0 +1,32 @@
+.module {
+  display: flex;
+  max-width: var(--pc-max-content-width);
+  min-height: 1024px;
+  margin: 0 auto;
+  padding: var(--pc-inner-padding);
+}
+
+.profile {
+  min-width: 280px;
+  margin-right: 64px;
+}
+
+.posts {
+  width: 100%;
+}
+
+@media screen and (max-width: 767px) {
+  .module {
+    display: block;
+    max-width: var(--sp-max-content-width);
+    min-width: var(--sp-min-content-width);
+    min-height: inherit;
+    padding: var(--sp-inner-padding);
+  }
+
+  .profile {
+    width: 100%;
+    margin-bottom: 24px;
+    border-bottom: 2px solid var(--gray);
+  }
+}

@@ -1,0 +1,7 @@
+.module {
+  padding: 0.6em;
+  color: var(--white);
+  border-radius: 4px;
+  border: 0px;
+  background-color: var(--gray);
+}

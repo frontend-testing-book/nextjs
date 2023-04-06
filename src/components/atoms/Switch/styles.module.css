@@ -1,0 +1,61 @@
+.module {
+  position: relative;
+  display: inline-block;
+  width: 58px;
+  height: 32px;
+  border-radius: 32px;
+  border: 2px solid var(--light-gray);
+}
+
+.module input {
+  display: block;
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  opacity: 0;
+  z-index: 2;
+  cursor: pointer;
+}
+
+.module input + span {
+  display: block;
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  border-radius: 32px;
+  transition-duration: 0.2s;
+}
+
+.module input:checked + span {
+  background-color: var(--blue);
+}
+
+.module input + span::after {
+  content: "";
+  display: block;
+  width: 24px;
+  height: 24px;
+  border-radius: 12px;
+  position: absolute;
+  top: 2px;
+  left: 2px;
+  box-shadow: 0px 1px 6px rgba(0, 0, 0, 0.6);
+  background-color: var(--white);
+  transition-duration: 0.2s;
+}
+
+.module input:checked + span::after {
+  transform: translateX(26px);
+}
+
+.module input:disabled {
+  pointer-events: none;
+}
+
+.module input:disabled + span {
+  opacity: 0.4;
+}

@@ -1,0 +1,10 @@
+.module {
+  padding: 36px 0;
+  border-top: 2px solid var(--gray);
+}
+
+@media screen and (max-width: 767px) {
+  .module {
+    padding: 18px 0;
+  }
+}

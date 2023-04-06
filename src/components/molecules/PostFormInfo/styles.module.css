@@ -1,0 +1,21 @@
+.info {
+  width: 75%;
+  margin-right: 32px;
+}
+
+.title,
+.description {
+  margin-bottom: 16px;
+}
+
+@media screen and (max-width: 767px) {
+  .info {
+    width: 100%;
+    margin-right: 0px;
+  }
+
+  .title,
+  .description {
+    margin-bottom: 16px;
+  }
+}

@@ -1,0 +1,33 @@
+.list {
+  display: flex;
+  justify-content: flex-start;
+  align-items: stretch;
+  flex-wrap: wrap;
+}
+
+.list li {
+  margin: 0 16px 16px 0;
+}
+
+.list li:nth-child(3n) {
+  margin-right: 0;
+}
+
+.noitems {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  width: 100%;
+  height: 480px;
+}
+
+@media screen and (max-width: 767px) {
+  .list {
+    padding-bottom: 24px;
+  }
+
+  .list li {
+    margin: 0 0 4px 0;
+  }
+}

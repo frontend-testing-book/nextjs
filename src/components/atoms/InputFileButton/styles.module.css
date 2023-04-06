@@ -1,0 +1,26 @@
+.module {
+  display: inline-block;
+  position: relative;
+}
+
+.module input {
+  display: block;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  opacity: 0;
+  z-index: 2;
+  cursor: pointer;
+}
+
+.module input:hover + [data-theme="dark"] {
+  border-color: var(--white);
+  background-color: var(--dark-navy);
+}
+
+.module input:hover + [data-theme="light"] {
+  color: var(--light-gray);
+  background-color: var(--white);
+}

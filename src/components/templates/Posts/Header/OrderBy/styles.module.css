@@ -1,0 +1,11 @@
+@media screen and (max-width: 767px) {
+  .module {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .module label {
+    font-size: 1.2rem;
+  }
+}

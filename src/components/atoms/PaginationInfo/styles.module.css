@@ -1,0 +1,12 @@
+.module {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 8px;
+}
+
+.module p {
+  margin: 0 4px;
+  font-size: 1.2rem;
+  color: var(--light-gray);
+}

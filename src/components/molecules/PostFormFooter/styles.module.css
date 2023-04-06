@@ -1,0 +1,49 @@
+.module {
+  display: flex;
+  flex-direction: row-reverse;
+  justify-content: space-between;
+  align-items: center;
+  border: 0;
+}
+
+.status {
+  flex-grow: 1;
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  margin-right: 32px;
+}
+
+.status label {
+  margin-right: 16px;
+  user-select: none;
+  cursor: pointer;
+}
+
+@media screen and (max-width: 767px) {
+  .module {
+    flex-direction: column;
+  }
+
+  .save button {
+    width: 260px;
+    margin: 18px auto;
+  }
+
+  .status {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    margin-right: 0px;
+  }
+
+  .delete {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    margin-top: 32px;
+    margin-bottom: 16px;
+    padding-top: 16px;
+    border-top: 2px solid var(--gray);
+  }
+}

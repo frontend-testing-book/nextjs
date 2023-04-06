@@ -1,0 +1,87 @@
+.list {
+  display: flex;
+}
+
+.list a {
+  display: block;
+  padding: 28px;
+  text-align: center;
+  cursor: pointer;
+  border-bottom: 4px solid var(--navy);
+  transition-duration: 0.2s;
+}
+
+.list a:hover {
+  border-color: var(--light-gray);
+}
+
+.list a[aria-current="page"] {
+  border-color: var(--orange);
+}
+
+.iscon path {
+  fill: aliceblue;
+}
+
+.closeMenu {
+  display: none;
+}
+
+@media screen and (max-width: 767px) {
+  .nav {
+    padding-top: 80px;
+    position: relative;
+  }
+
+  .list {
+    text-align: center;
+    display: block;
+  }
+
+  .list a {
+    display: inline-block;
+    padding: 32px;
+  }
+
+  .closeMenu {
+    display: block;
+    width: 80px;
+    height: 80px;
+    position: absolute;
+    top: 0;
+    right: 0;
+    border: 0;
+    background-color: transparent;
+    cursor: pointer;
+  }
+
+  .closeMenu::before,
+  .closeMenu::after {
+    content: "";
+  }
+
+  .closeMenu span,
+  .closeMenu::before,
+  .closeMenu::after {
+    display: block;
+    width: 32px;
+    height: 2px;
+    position: absolute;
+    left: 22px;
+    background-color: var(--white);
+  }
+
+  .closeMenu span {
+    top: 23px;
+  }
+
+  .closeMenu::before {
+    top: 39px;
+    transform: rotate(45deg);
+  }
+
+  .closeMenu::after {
+    bottom: 39px;
+    transform: rotate(-45deg);
+  }
+}

@@ -1,0 +1,26 @@
+.module {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-bottom: 1px solid var(--dark-navy);
+}
+
+.title {
+  margin-bottom: 24px;
+}
+
+.description {
+  font-size: 1.4rem;
+  color: var(--light-gray);
+}
+
+@media screen and (max-width: 767px) {
+  .module {
+    display: block;
+    padding-bottom: 16px;
+  }
+
+  .title {
+    margin-bottom: 4px;
+  }
+}

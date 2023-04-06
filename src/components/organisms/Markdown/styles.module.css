@@ -1,0 +1,51 @@
+.markdown {
+  line-height: 1.8;
+  font-size: 1.8rem;
+  color: var(--ghost-gray);
+}
+
+.markdown h1 {
+  margin: 32px 0;
+  padding-bottom: 32px;
+  border-bottom: 1px solid var(--light-gray);
+  color: var(--white);
+}
+
+.markdown p {
+  margin: 24px;
+}
+
+.markdown pre > div {
+  border-radius: 8px;
+}
+
+.markdown ul {
+  padding: 0 36px;
+}
+
+.markdown ul li {
+  list-style: disc;
+}
+
+.markdown img {
+  width: 100%;
+}
+
+@media screen and (max-width: 767px) {
+  .markdown {
+    font-size: 1.6rem;
+  }
+
+  .markdown h1 {
+    margin: 16px 0;
+    padding-bottom: 16px;
+  }
+
+  .markdown p {
+    margin: 12px 0;
+  }
+
+  .markdown ul {
+    padding: 0 18px;
+  }
+}

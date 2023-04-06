@@ -1,0 +1,34 @@
+.heading {
+  flex-grow: 1;
+  min-width: 161px;
+}
+
+.heading a {
+  display: flex;
+  align-items: center;
+  margin-bottom: 24px;
+  width: max-content;
+}
+
+.icon {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 48px;
+  height: 48px;
+  margin-right: 16px;
+  border-radius: 16px;
+  border: 4px solid var(--orange);
+  background-color: transparent;
+}
+
+.icon path {
+  fill: var(--orange);
+}
+
+@media screen and (max-width: 767px) {
+  .heading a {
+    font-size: 1.6rem;
+    margin-bottom: 0px;
+  }
+}

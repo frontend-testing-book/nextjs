@@ -1,0 +1,23 @@
+.module {
+  max-width: var(--pc-max-content-width);
+  margin: 0 auto;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  min-height: calc(100vh - 303px);
+}
+
+.module p {
+  margin-top: 24px;
+}
+
+.module svg path {
+  fill: var(--light-gray);
+}
+
+@media screen and (max-width: 767px) {
+  .module {
+    min-height: calc(100vh - 163px);
+  }
+}

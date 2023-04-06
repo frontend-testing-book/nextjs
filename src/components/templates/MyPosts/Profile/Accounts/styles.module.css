@@ -1,0 +1,32 @@
+.github,
+.twitter {
+  margin-bottom: 16px;
+}
+
+.github a,
+.twitter a {
+  display: flex;
+  align-items: center;
+  line-height: 0;
+}
+
+.github svg,
+.twitter svg {
+  margin-right: 16px;
+}
+
+.github path,
+.twitter path {
+  fill: var(--vivid-blue);
+}
+
+@media screen and (max-width: 767px) {
+  .accounts {
+    display: flex;
+    padding-bottom: 16px;
+  }
+
+  .github {
+    margin-right: 16px;
+  }
+}

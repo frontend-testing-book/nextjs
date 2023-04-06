@@ -1,0 +1,61 @@
+.item {
+  width: calc(33.3% - 16px);
+  position: relative;
+  overflow: hidden;
+  color: var(--navy);
+  background-color: var(--white);
+}
+
+.item img {
+  width: 100%;
+  aspect-ratio: 16 / 10;
+  object-fit: cover;
+  background-color: var(--navy);
+}
+
+.content {
+  width: 100%;
+  display: flex;
+  padding: 16px;
+}
+
+.description {
+  flex-grow: 1;
+  margin-right: 16px;
+}
+
+.title {
+  font-size: 1.4rem;
+  font-weight: bold;
+}
+
+.authorName {
+  font-size: 1.2rem;
+  color: var(--middle-gray);
+}
+
+.like {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.like path {
+  fill: var(--yellow);
+}
+
+@media screen and (max-width: 767px) {
+  .item {
+    width: 100%;
+  }
+
+  .item a {
+    width: 100%;
+    display: flex;
+  }
+
+  .item img {
+    width: 25%;
+  }
+}

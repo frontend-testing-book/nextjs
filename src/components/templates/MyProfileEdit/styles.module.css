@@ -1,0 +1,71 @@
+.module {
+  max-width: var(--pc-max-content-width);
+  min-height: 1024px;
+  margin: 0 auto;
+  padding: var(--pc-inner-padding);
+}
+
+.contentHeader {
+  margin-bottom: 24px;
+}
+
+.content {
+  width: 100%;
+  display: flex;
+  margin-bottom: 64px;
+}
+
+.avatar {
+  margin-right: 32px;
+  text-align: center;
+}
+
+.profile {
+  width: 100%;
+}
+
+.name {
+  margin-bottom: 16px;
+}
+
+.bio {
+  margin-bottom: 16px;
+}
+
+.accounts {
+  display: flex;
+  justify-content: space-around;
+}
+
+.twitter {
+  width: 100%;
+  margin-right: 16px;
+}
+
+.github {
+  width: 100%;
+}
+
+@media screen and (max-width: 767px) {
+  .module {
+    max-width: var(--sp-max-content-width);
+    min-width: var(--sp-min-content-width);
+    min-height: calc(100vh - 163px);
+    padding: var(--sp-inner-padding);
+  }
+
+  .content {
+    display: block;
+    margin-bottom: 24px;
+  }
+
+  .avatar {
+    margin-right: 0px;
+    margin-bottom: 16px;
+  }
+
+  .contentFooter {
+    display: flex;
+    justify-content: center;
+  }
+}

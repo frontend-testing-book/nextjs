@@ -1,0 +1,54 @@
+.module {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: fixed;
+  bottom: 32px;
+  right: 32px;
+  padding: 1em 2em;
+  font-size: 2rem;
+  border-radius: 8px;
+  text-align: center;
+  transition-duration: 0.4s;
+  pointer-events: none;
+}
+
+.module svg {
+  margin-right: 16px;
+}
+
+.module path {
+  fill: var(--white);
+}
+
+.module[data-style="busy"] {
+  background-color: var(--gray);
+}
+
+.module[data-style="succeed"] {
+  background-color: var(--blue);
+}
+
+.module[data-style="failed"] {
+  background-color: var(--pink);
+}
+
+.module[data-mounted="false"] {
+  opacity: 0;
+  transform: translateY(64px);
+}
+
+.module[data-mounted="true"] {
+  opacity: 1;
+  transform: translateY(0px);
+}
+
+@media screen and (max-width: 767px) {
+  .module {
+    bottom: 32px;
+    right: 32px;
+    padding: 1em 2em;
+    font-size: 2rem;
+    border-radius: 8px;
+  }
+}

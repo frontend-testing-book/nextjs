@@ -1,0 +1,41 @@
+version: "3"
+services:
+  db:
+    image: postgres:13.3
+    environment:
+      POSTGRES_USER: root
+      POSTGRES_PASSWORD: password
+    ports:
+      - 5432:5432
+  redis:
+    image: redis:latest
+    ports:
+      - 6379:6379
+  minio:
+    image: minio/minio:latest
+    environment:
+      MINIO_ROOT_USER: root
+      MINIO_ROOT_PASSWORD: password
+    command: server --console-address ":9001" /data
+    ports:
+      - 9000:9000
+      - 9001:9001
+  app:
+    build:
+      context: .
+      dockerfile: Dockerfile.prod
+      args:
+        DATABASE_URL: postgresql://root:password@db:5432/app-db?schema=public
+    environment:
+      REDIS_HOST: redis
+      REDIS_PORT: 6379
+      AWS_S3_ENDPOINT: http://minio:9000
+      AWS_ACCESS_KEY_ID: root
+      AWS_SECRET_ACCESS_KEY: password
+      DATABASE_URL: postgresql://root:password@db:5432/app-db?schema=public
+    depends_on:
+      - db
+      - redis
+      - minio
+    ports:
+      - "3000:3000"

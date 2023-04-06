@@ -1,0 +1,74 @@
+.user {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-left: 1px solid var(--dark-navy);
+  padding-left: 32px;
+  position: relative;
+}
+
+.user:hover .logout {
+  display: block;
+}
+
+.userName {
+  margin-right: 16px;
+  word-break: break-all;
+}
+
+.thumbnail {
+  min-width: 48px;
+  max-width: 48px;
+  height: 48px;
+  border-radius: 24px;
+  border: 2px solid var(--light-gray);
+  background-size: cover;
+  background-position: center center;
+}
+
+.logout {
+  display: none;
+  position: absolute;
+  bottom: 0;
+  left: 10%;
+  z-index: 2;
+  width: 80%;
+}
+
+.logoutInner {
+  width: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+
+.logoutBox::before {
+  content: "";
+  display: block;
+  width: 8px;
+  height: 8px;
+  position: absolute;
+  top: 0px;
+  left: calc(50% - 10px);
+  border-top: 2px solid var(--light-gray);
+  border-left: 2px solid var(--light-gray);
+  background-color: var(--gray);
+  transform: rotate(45deg);
+}
+
+.logoutBox {
+  margin-top: 5px;
+  border: 2px solid var(--light-gray);
+  background-color: var(--gray);
+  border-radius: 8px;
+}
+
+.logoutInner button {
+  width: 100%;
+}
+
+@media screen and (max-width: 767px) {
+  .user {
+    padding: 16px;
+  }
+}

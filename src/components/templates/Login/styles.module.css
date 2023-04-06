@@ -1,0 +1,74 @@
+.module {
+  min-width: var(--pc-min-content-width);
+  display: flex;
+}
+
+.image {
+  width: 50%;
+  min-height: 577px;
+  height: calc(100vh - 303px);
+  background: url("./assets/img01.jpg") no-repeat center center;
+  background-size: cover;
+}
+
+.inputs {
+  padding: 64px 0;
+  width: 50%;
+}
+
+.fieldset {
+  width: 480px;
+  margin: 0 auto;
+  padding: 32px;
+  border: none;
+  border: 2px solid var(--light-gray);
+  border-radius: 16px;
+}
+
+.legend {
+  padding: 8px 16px;
+  text-align: center;
+  font-size: 2.4rem;
+  background-color: var(--navy);
+}
+
+.email,
+.password {
+  margin-bottom: 24px;
+}
+
+.email label,
+.password label {
+  display: block;
+  margin-bottom: 8px;
+  font-weight: bold;
+}
+
+.button {
+  display: block;
+  margin: 24px auto;
+  padding: 20px 60px;
+}
+
+@media screen and (max-width: 767px) {
+  .module {
+    display: block;
+    max-width: var(--sp-max-content-width);
+    min-width: var(--sp-min-content-width);
+    padding: var(--sp-inner-padding);
+  }
+
+  .image {
+    display: none;
+  }
+
+  .inputs {
+    padding: 32px 0;
+    width: 100%;
+  }
+
+  .fieldset {
+    width: 100%;
+    padding: 16px;
+  }
+}

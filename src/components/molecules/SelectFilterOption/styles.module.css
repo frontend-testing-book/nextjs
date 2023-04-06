@@ -1,0 +1,11 @@
+.module {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 36px;
+}
+
+.title {
+  margin-right: 12px;
+  font-size: 1.4rem;
+}

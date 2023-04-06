@@ -1,0 +1,26 @@
+.module {
+  width: 100%;
+  padding: 0.6em;
+  font-size: 1.6rem;
+  line-height: 1.6;
+  border: none;
+  outline: none;
+  color: var(--white);
+  border-radius: 8px;
+  border: 2px solid var(--gray);
+  background-color: var(--gray);
+  transition-duration: 0.2s;
+}
+
+.module:focus {
+  border-color: var(--light-gray);
+}
+
+.module::placeholder {
+  color: var(--light-gray);
+}
+
+.module:disabled {
+  opacity: 0.4;
+  pointer-events: none;
+}

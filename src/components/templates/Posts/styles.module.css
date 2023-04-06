@@ -1,0 +1,33 @@
+.module {
+  max-width: var(--pc-max-content-width);
+  min-height: 1024px;
+  margin: 0 auto;
+  padding: var(--pc-inner-padding);
+}
+
+.list {
+  display: flex;
+  justify-content: space-between;
+  align-items: stretch;
+  flex-wrap: wrap;
+}
+
+.list li {
+  margin-bottom: 3%;
+}
+
+@media screen and (max-width: 767px) {
+  .module {
+    max-width: var(--sp-max-content-width);
+    min-height: inherit;
+    padding: var(--sp-inner-padding);
+  }
+
+  .list {
+    padding: 2% 0;
+  }
+
+  .list li {
+    margin-bottom: 1%;
+  }
+}

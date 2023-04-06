@@ -1,0 +1,89 @@
+.header {
+  display: flex;
+  align-items: flex-start;
+  max-width: var(--pc-max-content-width);
+  min-width: var(--pc-min-content-width);
+  height: 143px;
+  margin: 0 auto;
+  padding: 64px 64px 0 64px;
+  border-bottom: 1px solid var(--dark-navy);
+}
+
+.menu {
+  display: flex;
+}
+
+.openMenu {
+  display: none;
+}
+
+@media screen and (max-width: 767px) {
+  .header {
+    width: 100%;
+    height: 81px;
+    max-width: var(--sp-max-content-width);
+    min-width: var(--sp-min-content-width);
+    padding: 16px;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 2;
+    background-color: var(--navy);
+  }
+
+  .menu {
+    display: block;
+    width: 200px;
+    height: 100%;
+    position: fixed;
+    top: 0;
+    right: 0;
+    z-index: 2;
+    background-color: var(--navy);
+    transform: translateX(200px);
+    transition-duration: 0.2s;
+  }
+
+  .isOpen {
+    transform: translateX(0px);
+    box-shadow: 0 0 40px rgba(0, 0, 0, 1);
+  }
+
+  .openMenu {
+    display: block;
+    width: 48px;
+    height: 48px;
+    position: relative;
+    border: 0;
+    background-color: transparent;
+    cursor: pointer;
+  }
+
+  .openMenu::before,
+  .openMenu::after {
+    content: "";
+  }
+
+  .openMenu span,
+  .openMenu::before,
+  .openMenu::after {
+    display: block;
+    width: 32px;
+    height: 2px;
+    position: absolute;
+    left: 8px;
+    background-color: var(--white);
+  }
+
+  .openMenu span {
+    top: 23px;
+  }
+
+  .openMenu::before {
+    top: 14px;
+  }
+
+  .openMenu::after {
+    bottom: 14px;
+  }
+}

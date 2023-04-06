@@ -1,0 +1,12 @@
+.noitems {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  width: 100%;
+  height: 480px;
+}
+
+.heading {
+  margin: 24px 0;
+}
