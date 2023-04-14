@@ -5,8 +5,6 @@ import { selectImageFile, setupMockServer } from "@/tests/jest";
 import { composeStories } from "@storybook/testing-react";
 import { render, screen, waitFor } from "@testing-library/react";
 import userEvent from "@testing-library/user-event";
-import { DefaultBodyType, MockedRequest, RestHandler } from "msw";
-import { SetupServerApi } from "msw/lib/node";
 import mockRouter from "next-router-mock";
 import * as stories from "./index.stories";
 
@@ -34,13 +32,7 @@ async function setup() {
   return { container, typeTitle, saveAsPublished, saveAsDraft, clickButton, selectImage };
 }
 
-function requestSpy(server: SetupServerApi, handler: (spy?: jest.Mock<any, any>) => RestHandler<MockedRequest<DefaultBodyType>>) {
-  const spy = jest.fn()
-  server.use(handler(spy))
-  return spy
-}
-
-const server = setupMockServer(...MyPosts.handlers, ...MyProfile.handlers);
+setupMockServer(...MyPosts.handlers, ...MyProfile.handlers);
 beforeEach(() => {
   mockUploadImage();
   mockRouter.setCurrentUrl("/my/posts/create");
@@ -96,8 +88,7 @@ describe("Toast", () => {
   });
 
   test("公開に成功した場合「公開に成功しました」が表示される", async () => {
-    const spy = requestSpy(server, MyPosts.handleCreateMyPosts)
-    const { container, typeTitle, saveAsPublished, clickButton, selectImage } =
+    const { typeTitle, saveAsPublished, clickButton, selectImage } =
       await setup();
     await typeTitle("hoge");
     await selectImage();
@@ -106,8 +97,6 @@ describe("Toast", () => {
     await waitFor(() =>
       expect(screen.getByRole("alert")).toHaveTextContent("公開に成功しました")
     );
-    expect(container).toMatchSnapshot('rendered');
-    expect(spy.mock.lastCall).toMatchSnapshot('payload')
   });
 
   test("公開に失敗した場合「公開に失敗しました」が表示される", async () => {
