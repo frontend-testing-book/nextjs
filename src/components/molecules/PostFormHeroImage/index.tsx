@@ -55,6 +55,7 @@ export const PostFormHeroImage = (props: Props) => {
           variant: "small",
         }}
         inputProps={{
+          "data-testid": "file",
           accept: "image/png, image/jpeg",
           onChange: onChangeImage,
         }}

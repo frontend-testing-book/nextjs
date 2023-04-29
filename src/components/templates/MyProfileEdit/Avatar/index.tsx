@@ -39,6 +39,7 @@ export const Avatar = (props: Props) => {
           type: "button",
         }}
         inputProps={{
+          "data-testid": "file",
           accept: "image/png, image/jpeg",
           onChange: onChangeImage,
         }}
