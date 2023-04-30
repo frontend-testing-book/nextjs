@@ -9,10 +9,6 @@
   border-bottom: 1px solid var(--dark-navy);
 }
 
-.menu {
-  display: flex;
-}
-
 .openMenu {
   display: none;
 }
@@ -32,7 +28,6 @@
   }
 
   .menu {
-    display: block;
     width: 200px;
     height: 100%;
     position: fixed;

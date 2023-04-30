@@ -19,7 +19,7 @@ module.exports = {
       rules: storyContext.parameters?.a11y?.config?.rules,
     });
     await checkA11y(page, "#root", {
-      includedImpacts: ["critical"],
+      includedImpacts: ["critical", "serious"],
       detailedReport: false,
       detailedReportOptions: { html: true },
       axeOptions: storyContext.parameters?.a11y?.options,
