@@ -30,7 +30,6 @@ export const Header = memo(function HeaderBase() {
           <div
             id="drawer"
             ref={menuRef}
-            tabIndex={isOpen ? 0 : -1}
             className={clsx(styles.menu, isOpen && styles.isOpen)}
           >
             <Nav onCloseMenu={handleCloseMenu} />
