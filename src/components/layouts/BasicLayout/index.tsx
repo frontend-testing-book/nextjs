@@ -21,7 +21,7 @@ export const BasicLayout = (page: ReactElement) => {
     <BasicLayoutProviders>
       <div className={styles.root}>
         <Header />
-        <main>{page}</main>
+        {page}
       </div>
       <Footer />
     </BasicLayoutProviders>
