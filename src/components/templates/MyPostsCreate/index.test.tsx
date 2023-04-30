@@ -29,7 +29,14 @@ async function setup() {
   async function clickButton(name: "はい" | "いいえ") {
     await user.click(screen.getByRole("button", { name }));
   }
-  return { container, typeTitle, saveAsPublished, saveAsDraft, clickButton, selectImage };
+  return {
+    container,
+    typeTitle,
+    saveAsPublished,
+    saveAsDraft,
+    clickButton,
+    selectImage,
+  };
 }
 
 setupMockServer(...MyPosts.handlers, ...MyProfile.handlers);
