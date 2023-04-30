@@ -18,6 +18,7 @@
   --sp-max-content-width: 767px;
   --sp-min-content-width: 320px;
   --sp-inner-padding: 24px;
+  --header-bottom-space: 32px;
 }
 
 html {
