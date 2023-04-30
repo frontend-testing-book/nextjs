@@ -24,7 +24,7 @@
 .contentHeader {
   flex-grow: 1;
   margin-right: 32px;
-  margin-bottom: 24px;
+  margin-bottom: var(--header-bottom-space);
 }
 
 @media screen and (max-width: 767px) {

@@ -6,7 +6,7 @@
 }
 
 .contentHeader {
-  margin-bottom: 24px;
+  margin-bottom: var(--header-bottom-space);
 }
 
 .content {
