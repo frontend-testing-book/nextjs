@@ -38,7 +38,7 @@
   "dependencies": {
     "@hookform/resolvers": "^2.9.10",
     "@prisma/client": "^4.6.0",
-    "aws-sdk": "^2.1251.0",
+    "aws-sdk": "^2.1372.0",
     "bcryptjs": "^2.4.3",
     "clsx": "^1.2.1",
     "connect-redis": "^6.1.3",
