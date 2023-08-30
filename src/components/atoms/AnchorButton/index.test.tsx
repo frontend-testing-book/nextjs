@@ -6,7 +6,7 @@ test("[role='link']", () => {
   expect(screen.getByRole("link")).toBeInTheDocument();
 });
 
-test("[role='button'][aria-disabled='true']", () => {
+test("[role='button'][aria-disabled='true']です", () => {
   render(
     <AnchorButton href="#" disabled>
       test
