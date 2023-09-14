@@ -30,7 +30,7 @@ Strict Modeの場合、開発専用にセットアップ＋クリーンアップ
 
 ## カスタムフック
 
-別仮数にし、共通化可能。
+別仮数にし、共通化可能
 
 ```ts
 function useChatRoom({ serverUrl, roomId }) {
@@ -52,3 +52,7 @@ function useChatRoom({ serverUrl, roomId }) {
     serverUrl: serverUrl
   });
 ```
+
+## データフェッチ
+
+データフェッチが可能
