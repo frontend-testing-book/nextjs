@@ -3,6 +3,7 @@
   "version": "1.0.0",
   "private": true,
   "license": "MIT",
+  "packageManager": "pnpm@8.9.0",
   "scripts": {
     "dev": "next dev",
     "build": "next build",
@@ -19,8 +20,8 @@
     "storybook": "start-storybook -p 6006",
     "storybook:build": "build-storybook",
     "storybook:serve": "npx http-server storybook-static -a localhost -p 6006 -s",
-    "storybook:test": "npx wait-on http://localhost:6006 && npm run test:storybook",
-    "storybook:ci": "npx concurrently -k -s first \"npm run storybook:serve\" \"npm run storybook:test\"",
+    "storybook:test": "npx wait-on http://localhost:6006 && pnpm run test:storybook",
+    "storybook:ci": "npx concurrently -k -s first \"pnpm run storybook:serve\" \"pnpm run storybook:test\"",
     "storycap": "npx storycap http://localhost:6006",
     "vrt:snapshot": "storycap --serverCmd \"npx http-server storybook-static -a localhost -p 6006\" http://localhost:6006",
     "vrt:expected": "rimraf .reg/expected && mv __screenshots__ .reg/expected",
@@ -31,7 +32,7 @@
     "prisma:studio": "npx prisma studio",
     "docker:prod:build": "docker compose -f docker-compose.prod.yaml build",
     "docker:prod:start": "docker compose -f docker-compose.prod.yaml up",
-    "docker:e2e:start": "npm run prisma:reset && start-server-and-test 'npm start' 3000 'npm run test:e2e'",
+    "docker:e2e:start": "pnpm run prisma:reset && start-server-and-test 'pnpm start' 3000 'pnpm run test:e2e'",
     "docker:e2e:build": "docker compose -f docker-compose.e2e.yaml build",
     "docker:e2e:ci": "docker compose -f docker-compose.e2e.yaml up --exit-code-from e2e"
   },
@@ -123,5 +124,8 @@
     "storybook-addon-next-router": {
       "next": "$next"
     }
+  },
+  "volta": {
+    "node": "21.5.0"
   }
 }

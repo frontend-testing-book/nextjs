@@ -7,12 +7,22 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v3
-      - uses: actions/setup-node@v3
+
+      - name: Get node version from volta
+        id: get-node-version
+        uses: keita-hino/get-node-version-from-volta@main
+
+      - uses: pnpm/action-setup@v2
+        name: Install pnpm
         with:
-          node-version: 18
+          version: 8
+          run_install: false
+
       - name: Install dependencies
-        run: npm ci
+        run: pnpm install --frozen-lockfile
+
       - name: Docker Compose Build
-        run: npm run docker:e2e:build
+        run: pnpm run docker:e2e:build
+
       - name: Docker Compose Up As E2E Testing
-        run: npm run docker:e2e:ci
+        run: pnpm run docker:e2e:ci
