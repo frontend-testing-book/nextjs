@@ -2,26 +2,31 @@ const path = require("path");
 
 module.exports = {
   stories: ["../src/**/*.stories.@(js|jsx|ts|tsx)"],
+
   addons: [
     "@storybook/addon-links",
     "@storybook/addon-essentials",
     "@storybook/addon-interactions",
     "@storybook/addon-a11y",
-    "storybook-addon-next-router",
-    "storycap",
+    "storycap"
   ],
-  framework: "@storybook/react",
-  core: {
-    builder: "@storybook/builder-webpack5",
+
+  framework: {
+    name: "@storybook/nextjs",
+    options: {}
   },
+
   features: {
     interactionsDebugger: true,
   },
+
   staticDirs: ["../public"],
+
   previewHead: (head) => `
     ${head}
     <link rel="stylesheet" href="styles/globals.css" />
   `,
+
   webpackFinal: async (config) => {
     config.resolve.alias = {
       ...config.resolve.alias,
@@ -29,4 +34,8 @@ module.exports = {
     };
     return config;
   },
+
+  docs: {
+    autodocs: true
+  }
 };

@@ -15,6 +15,7 @@ export const getSession = (
   if (!store) {
     store = promisifyStore(
       new RedisStore({
+        // @ts-ignore TS2322
         client: new Redis({
           port: Number(process.env.REDIS_PORT),
           host: process.env.REDIS_HOST || "",
