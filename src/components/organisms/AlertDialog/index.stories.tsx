@@ -2,13 +2,13 @@ import { Args, PartialStoryFn } from "@storybook/csf";
 import {
   ComponentMeta,
   ComponentStoryObj,
-  ReactFramework,
+  ReactRenderer,
 } from "@storybook/react";
 import { AlertDialog, AlertDialogProvider } from "./";
 import { AlertDialogState } from "./AlertDialogContext";
 
 function createDecorator(defaultState?: Partial<AlertDialogState>) {
-  return function Decorator(Story: PartialStoryFn<ReactFramework, Args>) {
+  return function Decorator(Story: PartialStoryFn<ReactRenderer, Args>) {
     return (
       <AlertDialogProvider defaultState={{ ...defaultState, isShown: true }}>
         <Story />
