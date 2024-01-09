@@ -64,7 +64,7 @@
   },
   "devDependencies": {
     "@babel/core": "^7.19.3",
-    "@playwright/test": "^1.27.1",
+    "@playwright/test": "^1.40.1",
     "@storybook/addon-a11y": "^7.6.6",
     "@storybook/addon-actions": "^7.6.6",
     "@storybook/addon-essentials": "^7.6.6",
@@ -105,7 +105,7 @@
     "msw-storybook-addon": "^1.10.0",
     "next-router-mock": "^0.9.1",
     "npm-run-all": "^4.1.5",
-    "playwright": "^1.27.1",
+    "playwright": "^1.40.1",
     "prettier": "^3.1.1",
     "prettier-plugin-organize-imports": "^3.2.4",
     "reg-keygen-git-hash-plugin": "^0.12.1",
