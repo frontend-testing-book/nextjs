@@ -75,7 +75,6 @@
     "@storybook/react": "^7.6.6",
     "@storybook/test-runner": "^0.16.0",
     "@storybook/testing-library": "^0.2.2",
-    "@storybook/testing-react": "^2.0.0",
     "@svgr/webpack": "^6.4.0",
     "@testing-library/jest-dom": "^5.16.5",
     "@testing-library/react": "^13.4.0",

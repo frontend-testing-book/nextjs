@@ -112,9 +112,6 @@ devDependencies:
   '@storybook/testing-library':
     specifier: ^0.2.2
     version: 0.2.2
-  '@storybook/testing-react':
-    specifier: ^2.0.0
-    version: 2.0.1(@storybook/client-logger@7.6.6)(@storybook/preview-api@7.6.6)(@storybook/react@7.6.6)(@storybook/types@7.6.6)(react@18.2.0)
   '@svgr/webpack':
     specifier: ^6.4.0
     version: 6.4.0
@@ -5577,25 +5574,6 @@ packages:
       '@testing-library/dom': 9.3.3
       '@testing-library/user-event': 14.4.3(@testing-library/dom@9.3.3)
       ts-dedent: 2.2.0
-    dev: true
-
-  /@storybook/testing-react@2.0.1(@storybook/client-logger@7.6.6)(@storybook/preview-api@7.6.6)(@storybook/react@7.6.6)(@storybook/types@7.6.6)(react@18.2.0):
-    resolution: {integrity: sha512-D0fT7f0TUU8+usR+0NSyCYQCYDWernQqGZou32ISsoBkY9IiH1JMY4hQE8zUaGozu9eMlaa2wieWIMsjWovpdw==}
-    engines: {node: '>=10'}
-    deprecated: In Storybook 7, this package has been promoted to a first-class Storybook functionality. This means that you no longer need it! Instead, you can import the same utilities, but from the @storybook/react package. Please migrate when you can.
-    peerDependencies:
-      '@storybook/client-logger': ^7.0.0-beta.0 || ^7.0.0-rc.0 || ^7.0.0
-      '@storybook/preview-api': ^7.0.0-beta.0 || ^7.0.0-rc.0 || ^7.0.0
-      '@storybook/react': ^7.0.0-beta.0 || ^7.0.0-rc.0 || ^7.0.0
-      '@storybook/types': ^7.0.0-beta.0 || ^7.0.0-rc.0 || ^7.0.0
-      react: ^16.8.0 || ^17.0.0 || ^18.0.0
-    dependencies:
-      '@storybook/client-logger': 7.6.6
-      '@storybook/csf': 0.1.2
-      '@storybook/preview-api': 7.6.6
-      '@storybook/react': 7.6.6(react-dom@18.2.0)(react@18.2.0)(typescript@5.3.3)
-      '@storybook/types': 7.6.6
-      react: 18.2.0
     dev: true
 
   /@storybook/theming@7.6.6(react-dom@18.2.0)(react@18.2.0):
