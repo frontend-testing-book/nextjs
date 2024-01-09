@@ -1,14 +1,14 @@
-import { WatchCounter } from "@/components/atoms/WatchCounter";
-import { TextareaWithInfo } from "@/components/molecules/TextareaWithInfo";
-import { TextboxWithInfo } from "@/components/molecules/TextboxWithInfo";
-import { PutInput } from "@/pages/api/my/posts/[postId]";
+import { WatchCounter } from '@/components/atoms/WatchCounter';
+import { TextareaWithInfo } from '@/components/molecules/TextareaWithInfo';
+import { TextboxWithInfo } from '@/components/molecules/TextboxWithInfo';
+import { PutInput } from '@/pages/api/my/posts/[postId]';
 import {
   Control,
   FieldErrors,
   FieldValues,
   UseFormRegister,
-} from "react-hook-form";
-import styles from "./styles.module.css";
+} from 'react-hook-form';
+import styles from './styles.module.css';
 
 type Props<T extends FieldValues = PutInput> = {
   register: UseFormRegister<T>;
@@ -20,7 +20,7 @@ export const PostFormInfo = ({ register, control, errors }: Props) => {
   return (
     <div className={styles.info}>
       <TextboxWithInfo
-        {...register("title")}
+        {...register('title')}
         title="記事タイトル"
         className={styles.title}
         maxLength={64}
@@ -28,7 +28,7 @@ export const PostFormInfo = ({ register, control, errors }: Props) => {
         error={errors.title?.message}
       />
       <TextareaWithInfo
-        {...register("description")}
+        {...register('description')}
         title="記事概要"
         className={styles.description}
         rows={2}

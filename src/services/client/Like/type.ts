@@ -1,4 +1,4 @@
-import * as z from "zod";
+import * as z from 'zod';
 
 export const InputSchema = z.object({
   postId: z.number().positive().int(),

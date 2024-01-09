@@ -1,14 +1,14 @@
-import clsx from "clsx";
-import { forwardRef } from "react";
-import styles from "./styles.module.css";
+import clsx from 'clsx';
+import { forwardRef } from 'react';
+import styles from './styles.module.css';
 
 type Props = {
-  variant?: "small";
-} & Omit<React.ComponentPropsWithoutRef<"input">, "type" | "role">;
+  variant?: 'small';
+} & Omit<React.ComponentPropsWithoutRef<'input'>, 'type' | 'role'>;
 
 export const Switch = forwardRef<HTMLInputElement, Props>(function Switch(
   { className, ...props },
-  ref
+  ref,
 ) {
   return (
     <span className={clsx(className, styles.module)}>

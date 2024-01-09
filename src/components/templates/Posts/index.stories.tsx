@@ -1,7 +1,7 @@
-import { getPostsData } from "@/services/server/Posts/__mock__/fixture";
-import { BasicLayoutDecorator, PCStory, SPStory } from "@/tests/storybook";
-import { ComponentMeta, ComponentStoryObj } from "@storybook/react";
-import { Posts } from "./";
+import { getPostsData } from '@/services/server/Posts/__mock__/fixture';
+import { BasicLayoutDecorator, PCStory, SPStory } from '@/tests/storybook';
+import { ComponentMeta, ComponentStoryObj } from '@storybook/react';
+import { Posts } from './';
 
 export default {
   component: Posts,

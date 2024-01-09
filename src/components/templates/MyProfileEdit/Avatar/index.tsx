@@ -1,14 +1,14 @@
-import { InputFileButton } from "@/components/atoms/InputFileButton";
-import { useUploadImage } from "@/components/hooks/useUploadImage";
-import { useToastAction } from "@/components/providers/ToastProvider";
-import { PutInput } from "@/pages/api/my/profile/edit";
+import { InputFileButton } from '@/components/atoms/InputFileButton';
+import { useUploadImage } from '@/components/hooks/useUploadImage';
+import { useToastAction } from '@/components/providers/ToastProvider';
+import { PutInput } from '@/pages/api/my/profile/edit';
 import {
   FieldValues,
   Path,
   UseFormRegister,
   UseFormSetValue,
-} from "react-hook-form";
-import styles from "./styles.module.css";
+} from 'react-hook-form';
+import styles from './styles.module.css';
 
 type Props<T extends FieldValues = PutInput> = {
   register: UseFormRegister<T>;
@@ -24,23 +24,23 @@ export const Avatar = (props: Props) => {
     onRejected: () => {
       showToast({
         message: `画像のアップロードに失敗しました`,
-        style: "failed",
+        style: 'failed',
       });
     },
   });
   return (
     <div className={styles.module}>
       <p className={styles.avatar}>
-        <img src={imageUrl || ""} alt="" />
+        <img src={imageUrl || ''} alt="" />
       </p>
       <InputFileButton
         buttonProps={{
-          children: "写真を変更する",
-          type: "button",
+          children: '写真を変更する',
+          type: 'button',
         }}
         inputProps={{
-          "data-testid": "file",
-          accept: "image/png, image/jpeg",
+          'data-testid': 'file',
+          accept: 'image/png, image/jpeg',
           onChange: onChangeImage,
         }}
       />

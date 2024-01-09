@@ -1,8 +1,8 @@
-import { LinkButton } from "@/components/atoms/LinkButton";
-import { GetMyProfileReturn } from "@/services/server/MyProfile";
-import { Accounts } from "./Accounts";
-import Star from "./assets/star.svg";
-import styles from "./styles.module.css";
+import { LinkButton } from '@/components/atoms/LinkButton';
+import { GetMyProfileReturn } from '@/services/server/MyProfile';
+import { Accounts } from './Accounts';
+import Star from './assets/star.svg';
+import styles from './styles.module.css';
 
 type Props = GetMyProfileReturn;
 

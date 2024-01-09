@@ -1,10 +1,10 @@
-import { ReactNode, useCallback, useState } from "react";
+import { ReactNode, useCallback, useState } from 'react';
 import {
   AlertDialogActionContext,
   AlertDialogState,
   AlertDialogStateContext,
   initialState,
-} from "./AlertDialogContext";
+} from './AlertDialogContext';
 
 export const AlertDialogProvider = ({
   children,
@@ -15,10 +15,10 @@ export const AlertDialogProvider = ({
 }) => {
   const [state, setState] = useState({ ...initialState, ...defaultState });
   const showAlertDialog = useCallback(
-    (props?: Partial<Omit<AlertDialogState, "isShown">>) => {
+    (props?: Partial<Omit<AlertDialogState, 'isShown'>>) => {
       setState((prev) => ({ ...prev, ...props, isShown: true }));
     },
-    []
+    [],
   );
   const hideAlertDialog = useCallback(() => {
     setState((prev) => ({ ...prev, isShown: false }));

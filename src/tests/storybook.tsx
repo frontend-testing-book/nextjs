@@ -1,15 +1,15 @@
-import { BasicLayout } from "@/components/layouts/BasicLayout";
-import { LoginUserInfoProvider } from "@/components/providers/LoginUserInfo";
-import { INITIAL_VIEWPORTS } from "@storybook/addon-viewport";
-import { Args, PartialStoryFn } from "@storybook/csf";
-import { ReactRenderer } from "@storybook/react";
+import { BasicLayout } from '@/components/layouts/BasicLayout';
+import { LoginUserInfoProvider } from '@/components/providers/LoginUserInfo';
+import { INITIAL_VIEWPORTS } from '@storybook/addon-viewport';
+import { Args, PartialStoryFn } from '@storybook/csf';
+import { ReactRenderer } from '@storybook/react';
 
 export const BasicLayoutDecorator = (
-  Story: PartialStoryFn<ReactRenderer, Args>
+  Story: PartialStoryFn<ReactRenderer, Args>,
 ) => BasicLayout(<Story />);
 
 export const LoginUserInfoProviderDecorator = (
-  Story: PartialStoryFn<ReactRenderer, Args>
+  Story: PartialStoryFn<ReactRenderer, Args>,
 ) => (
   <LoginUserInfoProvider>
     <Story />
@@ -20,7 +20,7 @@ export const SPStory = {
   parameters: {
     viewport: {
       viewports: INITIAL_VIEWPORTS,
-      defaultViewport: "iphone6",
+      defaultViewport: 'iphone6',
     },
     screenshot: {
       viewport: {

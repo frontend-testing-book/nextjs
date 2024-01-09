@@ -1,5 +1,5 @@
-import { ComponentMeta, ComponentStoryObj } from "@storybook/react";
-import { PaginationInfo } from "./";
+import { ComponentMeta, ComponentStoryObj } from '@storybook/react';
+import { PaginationInfo } from './';
 
 export default {
   component: PaginationInfo,

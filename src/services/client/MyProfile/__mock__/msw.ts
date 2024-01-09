@@ -1,6 +1,6 @@
-import { rest } from "msw";
-import { path } from "..";
-import { getMyProfileData } from "./fixture";
+import { rest } from 'msw';
+import { path } from '..';
+import { getMyProfileData } from './fixture';
 
 export function handleGetMyProfile(args?: {
   mock?: jest.Mock<any, any>;

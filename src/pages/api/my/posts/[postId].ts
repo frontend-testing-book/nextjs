@@ -1,15 +1,15 @@
-import { ApiHandler, handleNotAllowed, withLogin } from "@/lib/next/api";
+import { ApiHandler, handleNotAllowed, withLogin } from '@/lib/next/api';
 import {
   UpdateMyPostInput,
   updateMyPostInputSchema,
-} from "@/lib/schema/MyPost";
-import { validate } from "@/lib/util";
+} from '@/lib/schema/MyPost';
+import { validate } from '@/lib/util';
 import type {
   DeleteMyPostReturn,
   UpdateMyPostReturn,
-} from "@/services/server/MyPost";
-import { deleteMyPost, updateMyPost } from "@/services/server/MyPost";
-import { z } from "zod";
+} from '@/services/server/MyPost';
+import { deleteMyPost, updateMyPost } from '@/services/server/MyPost';
+import { z } from 'zod';
 
 export type PutInput = UpdateMyPostInput;
 export type PutReturn = UpdateMyPostReturn;
@@ -35,9 +35,9 @@ const handleDelete = withLogin<DeleteReturn>(async (req, res) => {
 
 const handler: ApiHandler<PutReturn | DeleteReturn> = async (req, res) => {
   switch (req.method) {
-    case "PUT":
+    case 'PUT':
       return handlePut(req, res);
-    case "DELETE":
+    case 'DELETE':
       return handleDelete(req, res);
     default:
       return handleNotAllowed(res);

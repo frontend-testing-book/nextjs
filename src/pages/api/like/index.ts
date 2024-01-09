@@ -1,7 +1,7 @@
-import { ApiHandler, handleNotAllowed, withLogin } from "@/lib/next/api";
-import { validate } from "@/lib/util";
-import { postLike, PostLikeReturn } from "@/services/server/Like";
-import { z } from "zod";
+import { ApiHandler, handleNotAllowed, withLogin } from '@/lib/next/api';
+import { validate } from '@/lib/util';
+import { postLike, PostLikeReturn } from '@/services/server/Like';
+import { z } from 'zod';
 
 export type PostReturn = PostLikeReturn;
 
@@ -16,7 +16,7 @@ const handlePost = withLogin<PostReturn>(async (req, res) => {
 
 const handler: ApiHandler<PostReturn> = async (req, res) => {
   switch (req.method) {
-    case "POST":
+    case 'POST':
       return handlePost(req, res);
     default:
       return handleNotAllowed(res);

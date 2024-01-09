@@ -1,13 +1,13 @@
-import { Button } from "@/components/atoms/Button";
-import { WatchCounter } from "@/components/atoms/WatchCounter";
-import { ContentFooter } from "@/components/molecules/ContentFooter";
-import { ContentHeader } from "@/components/molecules/ContentHeader";
-import { TextareaWithInfo } from "@/components/molecules/TextareaWithInfo";
-import { TextboxWithInfo } from "@/components/molecules/TextboxWithInfo";
-import { GetMyProfileEditReturn } from "@/services/server/MyProfileEdit";
-import { Avatar } from "./Avatar";
-import styles from "./styles.module.css";
-import { useMyProfileEdit } from "./useMyProfileEdit";
+import { Button } from '@/components/atoms/Button';
+import { WatchCounter } from '@/components/atoms/WatchCounter';
+import { ContentFooter } from '@/components/molecules/ContentFooter';
+import { ContentHeader } from '@/components/molecules/ContentHeader';
+import { TextareaWithInfo } from '@/components/molecules/TextareaWithInfo';
+import { TextboxWithInfo } from '@/components/molecules/TextboxWithInfo';
+import { GetMyProfileEditReturn } from '@/services/server/MyProfileEdit';
+import { Avatar } from './Avatar';
+import styles from './styles.module.css';
+import { useMyProfileEdit } from './useMyProfileEdit';
 
 export type Props = {
   profile: GetMyProfileEditReturn;
@@ -28,13 +28,13 @@ export const MyProfileEdit = (props: Props) => {
           <Avatar
             register={register}
             setValue={setValue}
-            name={"imageUrl"}
+            name={'imageUrl'}
             defaultImageUrl={props.profile.imageUrl}
           />
         </div>
         <div className={styles.profile}>
           <TextboxWithInfo
-            {...register("name")}
+            {...register('name')}
             title="ユーザー名"
             className={styles.name}
             maxLength={32}
@@ -42,7 +42,7 @@ export const MyProfileEdit = (props: Props) => {
             error={errors.name?.message}
           />
           <TextareaWithInfo
-            {...register("bio")}
+            {...register('bio')}
             title="自己紹介文"
             className={styles.bio}
             maxLength={128}
@@ -52,13 +52,13 @@ export const MyProfileEdit = (props: Props) => {
           />
           <div className={styles.accounts}>
             <TextboxWithInfo
-              {...register("twitterAccount")}
+              {...register('twitterAccount')}
               title="Twitter"
               className={styles.twitter}
               maxLength={64}
             />
             <TextboxWithInfo
-              {...register("githubAccount")}
+              {...register('githubAccount')}
               title="GitHub"
               className={styles.github}
               maxLength={64}

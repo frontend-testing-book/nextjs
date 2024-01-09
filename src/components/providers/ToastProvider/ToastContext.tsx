@@ -1,6 +1,6 @@
-import { createContext } from "react";
+import { createContext } from 'react';
 
-export type ToastStyle = "succeed" | "failed" | "busy";
+export type ToastStyle = 'succeed' | 'failed' | 'busy';
 
 export type ToastState = {
   isShown: boolean;
@@ -10,14 +10,14 @@ export type ToastState = {
 
 export const initialState: ToastState = {
   isShown: false,
-  message: "",
-  style: "succeed",
+  message: '',
+  style: 'succeed',
 };
 
 export const ToastStateContext = createContext(initialState);
 
 export type ToastAction = {
-  showToast: (state?: Partial<Omit<ToastState, "isShown">>) => void;
+  showToast: (state?: Partial<Omit<ToastState, 'isShown'>>) => void;
   hideToast: () => void;
 };
 

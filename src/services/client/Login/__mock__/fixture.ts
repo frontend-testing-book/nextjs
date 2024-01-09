@@ -1,3 +1,3 @@
-import * as ApiLogin from "@/pages/api/login";
+import * as ApiLogin from '@/pages/api/login';
 
-export const data: ApiLogin.PostReturn = { redirectUrl: "/" };
+export const data: ApiLogin.PostReturn = { redirectUrl: '/' };

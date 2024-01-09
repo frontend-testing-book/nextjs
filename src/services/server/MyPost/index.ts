@@ -1,6 +1,6 @@
-import { NotFoundError } from "@/lib/error";
-import { UpdateMyPostInput } from "@/lib/schema/MyPost";
-import { handlePrismaError, prisma } from "..";
+import { NotFoundError } from '@/lib/error';
+import { UpdateMyPostInput } from '@/lib/schema/MyPost';
+import { handlePrismaError, prisma } from '..';
 
 export async function getMyPost({
   id,

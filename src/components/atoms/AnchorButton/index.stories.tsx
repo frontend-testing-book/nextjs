@@ -1,9 +1,9 @@
-import { ComponentMeta, ComponentStoryObj } from "@storybook/react";
-import { AnchorButton } from "./";
+import { ComponentMeta, ComponentStoryObj } from '@storybook/react';
+import { AnchorButton } from './';
 
 export default {
   component: AnchorButton,
-  args: { children: "送信する" },
+  args: { children: '送信する' },
 } as ComponentMeta<typeof AnchorButton>;
 
 type Story = ComponentStoryObj<typeof AnchorButton>;
@@ -11,11 +11,11 @@ type Story = ComponentStoryObj<typeof AnchorButton>;
 export const Default: Story = {};
 
 export const Large: Story = {
-  args: { variant: "large" },
+  args: { variant: 'large' },
 };
 
 export const Small: Story = {
-  args: { variant: "small" },
+  args: { variant: 'small' },
 };
 
 export const Disabled: Story = {
@@ -23,21 +23,21 @@ export const Disabled: Story = {
 };
 
 export const Dark: Story = {
-  args: { theme: "dark" },
+  args: { theme: 'dark' },
 };
 
 export const Light: Story = {
-  args: { theme: "light" },
+  args: { theme: 'light' },
 };
 
 export const Transparent: Story = {
-  args: { theme: "transparent" },
+  args: { theme: 'transparent' },
 };
 
 export const Blue: Story = {
-  args: { theme: "blue" },
+  args: { theme: 'blue' },
 };
 
 export const Error: Story = {
-  args: { theme: "error" },
+  args: { theme: 'error' },
 };

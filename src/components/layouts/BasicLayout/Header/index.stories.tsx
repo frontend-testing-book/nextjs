@@ -1,9 +1,9 @@
-import { handleGetMyProfile } from "@/services/client/MyProfile/__mock__/msw";
-import { LoginUserInfoProviderDecorator, SPStory } from "@/tests/storybook";
-import { expect } from "@storybook/jest";
-import { ComponentMeta, ComponentStoryObj } from "@storybook/react";
-import { userEvent as user, waitFor, within } from "@storybook/testing-library";
-import { Header } from "./";
+import { handleGetMyProfile } from '@/services/client/MyProfile/__mock__/msw';
+import { LoginUserInfoProviderDecorator, SPStory } from '@/tests/storybook';
+import { expect } from '@storybook/jest';
+import { ComponentMeta, ComponentStoryObj } from '@storybook/react';
+import { userEvent as user, waitFor, within } from '@storybook/testing-library';
+import { Header } from './';
 
 export default {
   component: Header,
@@ -22,13 +22,13 @@ export const LoggedIn: Story = {};
 
 export const RouteMyPosts: Story = {
   parameters: {
-    nextRouter: { pathname: "/my/posts" },
+    nextRouter: { pathname: '/my/posts' },
   },
 };
 
 export const RouteMyPostsCreate: Story = {
   parameters: {
-    nextRouter: { pathname: "/my/posts/create" },
+    nextRouter: { pathname: '/my/posts/create' },
   },
 };
 
@@ -45,15 +45,15 @@ export const SPLoggedIn: Story = {
   },
   play: async ({ canvasElement }) => {
     const canvas = within(canvasElement);
-    const navigation = canvas.queryByRole("navigation", {
-      name: "ナビゲーション",
+    const navigation = canvas.queryByRole('navigation', {
+      name: 'ナビゲーション',
     });
     await expect(navigation).not.toBeInTheDocument();
   },
 };
 
 export const SPLoggedInOpenedMenu: Story = {
-  name: "SPレイアウトでドロワーメニューを開ける",
+  name: 'SPレイアウトでドロワーメニューを開ける',
   parameters: {
     ...SPStory.parameters,
     screenshot: {
@@ -63,19 +63,19 @@ export const SPLoggedInOpenedMenu: Story = {
   },
   play: async ({ canvasElement }) => {
     const canvas = within(canvasElement);
-    const button = await canvas.findByRole("button", {
-      name: "メニューを開く",
+    const button = await canvas.findByRole('button', {
+      name: 'メニューを開く',
     });
     await user.click(button);
-    const navigation = canvas.getByRole("navigation", {
-      name: "ナビゲーション",
+    const navigation = canvas.getByRole('navigation', {
+      name: 'ナビゲーション',
     });
     await expect(navigation).toBeInTheDocument();
   },
 };
 
 export const SPLoggedInClosedMenu: Story = {
-  name: "SPレイアウトでドロワーメニューを閉じれる",
+  name: 'SPレイアウトでドロワーメニューを閉じれる',
   parameters: {
     ...SPStory.parameters,
     screenshot: {
@@ -85,12 +85,12 @@ export const SPLoggedInClosedMenu: Story = {
   },
   play: async ({ canvasElement }) => {
     const canvas = within(canvasElement);
-    const buttonOpen = await canvas.findByRole("button", {
-      name: "メニューを開く",
+    const buttonOpen = await canvas.findByRole('button', {
+      name: 'メニューを開く',
     });
     await user.click(buttonOpen);
-    const buttonClose = await canvas.findByRole("button", {
-      name: "メニューを閉じる",
+    const buttonClose = await canvas.findByRole('button', {
+      name: 'メニューを閉じる',
     });
     await expect(buttonClose).toBeInTheDocument();
     await user.click(buttonClose);
@@ -98,15 +98,15 @@ export const SPLoggedInClosedMenu: Story = {
 };
 
 export const PCLoggedInNotHaveOpenMenu: Story = {
-  name: "PCレイアウトで「メニューを開く」は表示されない",
+  name: 'PCレイアウトで「メニューを開く」は表示されない',
   play: async ({ canvasElement }) => {
     const canvas = within(canvasElement);
     await waitFor(() =>
       expect(
-        canvas.queryByRole("button", {
-          name: "メニューを開く",
-        })
-      ).toBeNull()
+        canvas.queryByRole('button', {
+          name: 'メニューを開く',
+        }),
+      ).toBeNull(),
     );
   },
 };

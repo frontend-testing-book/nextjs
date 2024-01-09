@@ -1,6 +1,6 @@
-import { getMyPostsData } from "@/services/server/MyPosts/__mock__/fixture";
-import { ComponentMeta, ComponentStoryObj } from "@storybook/react";
-import { Header } from "./";
+import { getMyPostsData } from '@/services/server/MyPosts/__mock__/fixture';
+import { ComponentMeta, ComponentStoryObj } from '@storybook/react';
+import { Header } from './';
 
 export default {
   component: Header,

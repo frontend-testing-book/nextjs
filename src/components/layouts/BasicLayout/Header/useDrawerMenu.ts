@@ -1,6 +1,6 @@
-import { useRouter } from "next/router";
-import { useCallback, useEffect, useRef, useState } from "react";
-import { useClickAway } from "react-use";
+import { useRouter } from 'next/router';
+import { useCallback, useEffect, useRef, useState } from 'react';
+import { useClickAway } from 'react-use';
 
 export function useDrawerMenu() {
   const [isOpen, setIsOpen] = useState(true);

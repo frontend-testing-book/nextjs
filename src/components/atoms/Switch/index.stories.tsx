@@ -1,11 +1,11 @@
-import { ComponentMeta, ComponentStoryObj } from "@storybook/react";
-import { Switch } from "./";
+import { ComponentMeta, ComponentStoryObj } from '@storybook/react';
+import { Switch } from './';
 
 export default {
   component: Switch,
   parameters: {
     a11y: {
-      config: { rules: [{ id: "label", enabled: false }] },
+      config: { rules: [{ id: 'label', enabled: false }] },
     },
   },
 } as ComponentMeta<typeof Switch>;

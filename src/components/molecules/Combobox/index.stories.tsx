@@ -1,15 +1,15 @@
-import { ComponentMeta, ComponentStoryObj } from "@storybook/react";
-import { Combobox } from "./";
+import { ComponentMeta, ComponentStoryObj } from '@storybook/react';
+import { Combobox } from './';
 
 export default {
   component: Combobox,
   parameters: {
     a11y: {
-      config: { rules: [{ id: "label", enabled: false }] },
+      config: { rules: [{ id: 'label', enabled: false }] },
     },
   },
   args: {
-    "aria-label": "ソート順",
+    'aria-label': 'ソート順',
     children: (
       <>
         <option>新着順</option>

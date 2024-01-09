@@ -1,14 +1,14 @@
-import { PutInput } from "@/pages/api/my/posts/[postId]";
-import { ComponentMeta, ComponentStoryObj } from "@storybook/react";
-import { ComponentPropsWithoutRef } from "react";
-import { useForm } from "react-hook-form";
-import { PostFormFooter } from "./";
+import { PutInput } from '@/pages/api/my/posts/[postId]';
+import { ComponentMeta, ComponentStoryObj } from '@storybook/react';
+import { ComponentPropsWithoutRef } from 'react';
+import { useForm } from 'react-hook-form';
+import { PostFormFooter } from './';
 
 function TestComponent(
   props: Omit<
     ComponentPropsWithoutRef<typeof PostFormFooter>,
-    "register" | "control"
-  >
+    'register' | 'control'
+  >,
 ) {
   const { register, control } = useForm<PutInput>();
   return <PostFormFooter {...props} register={register} control={control} />;

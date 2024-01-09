@@ -1,5 +1,5 @@
-import { OrderBy } from "./OrderBy";
-import styles from "./styles.module.css";
+import { OrderBy } from './OrderBy';
+import styles from './styles.module.css';
 
 export const Header = () => {
   return (

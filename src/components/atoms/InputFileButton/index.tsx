@@ -1,11 +1,11 @@
-import { Button } from "@/components/atoms/Button";
-import clsx from "clsx";
-import { ComponentProps, forwardRef } from "react";
-import styles from "./styles.module.css";
+import { Button } from '@/components/atoms/Button';
+import clsx from 'clsx';
+import { ComponentProps, forwardRef } from 'react';
+import styles from './styles.module.css';
 
 type Props = {
   buttonProps: ComponentProps<typeof Button>;
-  inputProps: ComponentProps<"input"> & {
+  inputProps: ComponentProps<'input'> & {
     [K in `data-${string}`]: string;
   };
   className?: string;
@@ -19,5 +19,5 @@ export const InputFileButton = forwardRef<HTMLInputElement, Props>(
         <Button {...buttonProps} />
       </div>
     );
-  }
+  },
 );

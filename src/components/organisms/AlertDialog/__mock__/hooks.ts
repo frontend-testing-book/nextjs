@@ -1,14 +1,14 @@
-import * as hooks from "../hooks";
+import * as hooks from '../hooks';
 
-jest.mock("../hooks", () => ({
+jest.mock('../hooks', () => ({
   __esModule: true,
-  ...jest.requireActual("../hooks"),
+  ...jest.requireActual('../hooks'),
 }));
 
 export function mockUseAlertDialogAction() {
   const showAlertDialog = jest.fn();
   const hideAlertDialog = jest.fn();
-  jest.spyOn(hooks, "useAlertDialogAction").mockImplementationOnce(() => ({
+  jest.spyOn(hooks, 'useAlertDialogAction').mockImplementationOnce(() => ({
     showAlertDialog,
     hideAlertDialog,
   }));

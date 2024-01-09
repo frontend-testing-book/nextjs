@@ -1,13 +1,13 @@
-import { BasicLayout } from "@/components/layouts/BasicLayout";
-import { PageTitle } from "@/components/meta";
-import { Error } from "@/components/templates/Error";
-import { MyProfileEdit } from "@/components/templates/MyProfileEdit";
-import { withLogin } from "@/lib/next/gssp";
-import { NextPageWithGsspResult } from "@/lib/next/type";
+import { BasicLayout } from '@/components/layouts/BasicLayout';
+import { PageTitle } from '@/components/meta';
+import { Error } from '@/components/templates/Error';
+import { MyProfileEdit } from '@/components/templates/MyProfileEdit';
+import { withLogin } from '@/lib/next/gssp';
+import { NextPageWithGsspResult } from '@/lib/next/type';
 import {
   getMyProfileEdit,
   GetMyProfileEditReturn,
-} from "@/services/server/MyProfileEdit";
+} from '@/services/server/MyProfileEdit';
 
 export type Props = {
   profile: GetMyProfileEditReturn;
@@ -19,7 +19,7 @@ const Page: NextPageWithGsspResult<Props> = ({ data, err }) => {
 };
 Page.getLayout = BasicLayout;
 Page.getPageTitle = PageTitle(
-  ({ data }) => `${data?.authorName}さんのプロフィール編集`
+  ({ data }) => `${data?.authorName}さんのプロフィール編集`,
 );
 
 export const getServerSideProps = withLogin<Props>(async ({ user }) => {

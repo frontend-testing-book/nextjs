@@ -1,16 +1,16 @@
-import { InputFileButton } from "@/components/atoms/InputFileButton";
-import { useUploadImage } from "@/components/hooks/useUploadImage";
-import { useToastAction } from "@/components/providers/ToastProvider";
-import { PutInput } from "@/pages/api/my/posts/[postId]";
-import clsx from "clsx";
+import { InputFileButton } from '@/components/atoms/InputFileButton';
+import { useUploadImage } from '@/components/hooks/useUploadImage';
+import { useToastAction } from '@/components/providers/ToastProvider';
+import { PutInput } from '@/pages/api/my/posts/[postId]';
+import clsx from 'clsx';
 import {
   FieldValues,
   Path,
   UseFormRegister,
   UseFormSetValue,
-} from "react-hook-form";
-import ImageIcon from "./assets/image.svg";
-import styles from "./styles.module.css";
+} from 'react-hook-form';
+import ImageIcon from './assets/image.svg';
+import styles from './styles.module.css';
 
 type Props<T extends FieldValues = PutInput> = {
   register: UseFormRegister<T>;
@@ -27,7 +27,7 @@ export const PostFormHeroImage = (props: Props) => {
     onRejected: () => {
       showToast({
         message: `画像のアップロードに失敗しました`,
-        style: "failed",
+        style: 'failed',
       });
     },
   });
@@ -37,7 +37,7 @@ export const PostFormHeroImage = (props: Props) => {
       <InputFileButton
         className={clsx(styles.button, imageUrl && styles.hasImage)}
         buttonProps={{
-          theme: props.error ? "error" : "dark",
+          theme: props.error ? 'error' : 'dark',
           children: (
             <>
               <ImageIcon />
@@ -46,17 +46,17 @@ export const PostFormHeroImage = (props: Props) => {
                 <span>{props.error}</span>
               ) : (
                 <span>
-                  {imageUrl ? "イメージを変更する" : "イメージを選択する"}
+                  {imageUrl ? 'イメージを変更する' : 'イメージを選択する'}
                 </span>
               )}
             </>
           ),
-          type: "button",
-          variant: "small",
+          type: 'button',
+          variant: 'small',
         }}
         inputProps={{
-          "data-testid": "file",
-          accept: "image/png, image/jpeg",
+          'data-testid': 'file',
+          accept: 'image/png, image/jpeg',
           onChange: onChangeImage,
         }}
       />

@@ -1,13 +1,13 @@
-import { mockUseToastAction } from "@/components/providers/ToastProvider/__mock__/hooks";
+import { mockUseToastAction } from '@/components/providers/ToastProvider/__mock__/hooks';
 import {
   mockPostLogoutRejected,
   mockPostLogoutResolved,
-} from "@/services/client/Logout/__mock__/jest";
-import { getMyProfileData } from "@/services/client/MyProfile/__mock__/fixture";
-import { mockWindowLocationReload } from "@/tests/jest";
-import { render, screen } from "@testing-library/react";
-import userEvent from "@testing-library/user-event";
-import { LoginUser } from "./";
+} from '@/services/client/Logout/__mock__/jest';
+import { getMyProfileData } from '@/services/client/MyProfile/__mock__/fixture';
+import { mockWindowLocationReload } from '@/tests/jest';
+import { render, screen } from '@testing-library/react';
+import userEvent from '@testing-library/user-event';
+import { LoginUser } from './';
 
 const user = userEvent.setup();
 
@@ -16,15 +16,15 @@ const setup = () => {
   const { showToast } = mockUseToastAction();
   render(<LoginUser {...getMyProfileData} />);
   const clickLogout = async () => {
-    const region = screen.getByRole("region", { name: "ログインユーザー" });
+    const region = screen.getByRole('region', { name: 'ログインユーザー' });
     await user.hover(region);
-    const button = screen.getByRole("button", { name: "ログアウト" });
+    const button = screen.getByRole('button', { name: 'ログアウト' });
     await user.click(button);
   };
   return { showToast, clickLogout };
 };
 
-test("ログアウトに成功すると、リロードされる", async () => {
+test('ログアウトに成功すると、リロードされる', async () => {
   const mock = mockPostLogoutResolved();
   const { showToast, clickLogout } = setup();
   await clickLogout();
@@ -33,7 +33,7 @@ test("ログアウトに成功すると、リロードされる", async () => {
   expect(window.location.reload).toHaveBeenCalled();
 });
 
-test("ログアウトに失敗すると、Toast が表示される", async () => {
+test('ログアウトに失敗すると、Toast が表示される', async () => {
   const mock = mockPostLogoutRejected();
   const { showToast, clickLogout } = setup();
   await clickLogout();

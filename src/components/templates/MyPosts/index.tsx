@@ -1,8 +1,8 @@
-import { useLoginUserInfoState } from "@/components/providers/LoginUserInfo";
-import { GetMyPostsReturn } from "@/services/server/MyPosts";
-import { Posts } from "./Posts";
-import { Profile } from "./Profile";
-import styles from "./styles.module.css";
+import { useLoginUserInfoState } from '@/components/providers/LoginUserInfo';
+import { GetMyPostsReturn } from '@/services/server/MyPosts';
+import { Posts } from './Posts';
+import { Profile } from './Profile';
+import styles from './styles.module.css';
 
 type Props = {
   posts: GetMyPostsReturn;

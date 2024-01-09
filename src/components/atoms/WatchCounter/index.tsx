@@ -1,6 +1,6 @@
-import clsx from "clsx";
-import { useWatch } from "react-hook-form";
-import styles from "./styles.module.css";
+import clsx from 'clsx';
+import { useWatch } from 'react-hook-form';
+import styles from './styles.module.css';
 
 type Props = {
   max: number;

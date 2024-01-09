@@ -1,5 +1,5 @@
-import { ApiHandler, handleNotAllowed, withLogin } from "@/lib/next/api";
-import { getMyProfile, GetMyProfileReturn } from "@/services/server/MyProfile";
+import { ApiHandler, handleNotAllowed, withLogin } from '@/lib/next/api';
+import { getMyProfile, GetMyProfileReturn } from '@/services/server/MyProfile';
 
 export type GetReturn = GetMyProfileReturn;
 
@@ -10,7 +10,7 @@ const handleGet = withLogin<GetReturn>(async (req, res) => {
 
 const handler: ApiHandler<GetReturn> = async (req, res) => {
   switch (req.method) {
-    case "GET":
+    case 'GET':
       return handleGet(req, res);
     default:
       return handleNotAllowed(res);

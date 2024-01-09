@@ -1,7 +1,7 @@
 import {
   DeleteMyPostReturn,
   UpdateMyPostReturn,
-} from "@/services/server/MyPost";
+} from '@/services/server/MyPost';
 
 export const updateMyPostData: UpdateMyPostReturn = {
   id: 1,

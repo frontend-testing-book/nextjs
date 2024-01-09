@@ -1,11 +1,11 @@
-import Link from "next/link";
-import { useRouter } from "next/router";
-import { AnchorHTMLAttributes } from "react";
-import styles from "./styles.module.css";
+import Link from 'next/link';
+import { useRouter } from 'next/router';
+import { AnchorHTMLAttributes } from 'react';
+import styles from './styles.module.css';
 
 function isCurrent(flag: boolean): AnchorHTMLAttributes<HTMLAnchorElement> {
   if (!flag) return {};
-  return { "aria-current": "page" };
+  return { 'aria-current': 'page' };
 }
 
 type Props = { onCloseMenu: () => void };
@@ -24,8 +24,8 @@ export const Nav = ({ onCloseMenu }: Props) => {
           <Link href={`/my/posts`} legacyBehavior>
             <a
               {...isCurrent(
-                pathname.startsWith("/my/posts") &&
-                  pathname !== "/my/posts/create"
+                pathname.startsWith('/my/posts') &&
+                  pathname !== '/my/posts/create',
               )}
             >
               My Posts
@@ -34,7 +34,7 @@ export const Nav = ({ onCloseMenu }: Props) => {
         </li>
         <li>
           <Link href={`/my/posts/create`} legacyBehavior>
-            <a {...isCurrent(pathname === "/my/posts/create")}>Create Post</a>
+            <a {...isCurrent(pathname === '/my/posts/create')}>Create Post</a>
           </Link>
         </li>
       </ul>

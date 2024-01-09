@@ -1,9 +1,9 @@
-import { UploadImageData } from "@/services/client/UploadImage";
-import { mockUploadImage } from "@/services/client/UploadImage/__mock__/jest";
-import { selectImageFile } from "@/tests/jest";
-import { render, screen, waitFor } from "@testing-library/react";
-import { useForm } from "react-hook-form";
-import { useUploadImage } from "./useUploadImage";
+import { UploadImageData } from '@/services/client/UploadImage';
+import { mockUploadImage } from '@/services/client/UploadImage/__mock__/jest';
+import { selectImageFile } from '@/tests/jest';
+import { render, screen, waitFor } from '@testing-library/react';
+import { useForm } from 'react-hook-form';
+import { useUploadImage } from './useUploadImage';
 
 function TestComponent({
   onChange,
@@ -20,13 +20,13 @@ function TestComponent({
     setValue,
     onResolved,
     onRejected,
-    name: "image",
+    name: 'image',
   });
   return (
     <>
       {imageUrl && <p>selected</p>}
       <input
-        type={"file"}
+        type={'file'}
         data-testid="file"
         onChange={(event) => {
           onChangeImage(event);
@@ -37,8 +37,8 @@ function TestComponent({
   );
 }
 
-describe("useUploadImage", () => {
-  test("画像を選択すると imageUrl の値が truty になる", async () => {
+describe('useUploadImage', () => {
+  test('画像を選択すると imageUrl の値が truty になる', async () => {
     mockUploadImage();
     const mock = jest.fn();
     render(<TestComponent onChange={mock} />);
@@ -47,11 +47,11 @@ describe("useUploadImage", () => {
     expect(mock).toHaveBeenCalledWith(filePath);
 
     await waitFor(() =>
-      expect(screen.getByText("selected")).toBeInTheDocument()
+      expect(screen.getByText('selected')).toBeInTheDocument(),
     );
   });
 
-  test("アップロードに成功したとき、onResolved が呼ばれる", async () => {
+  test('アップロードに成功したとき、onResolved が呼ばれる', async () => {
     mockUploadImage();
     const handleResolved = jest.fn();
     render(<TestComponent onResolved={handleResolved} />);
@@ -60,7 +60,7 @@ describe("useUploadImage", () => {
     await waitFor(() => expect(handleResolved).toHaveBeenCalled());
   });
 
-  test("アップロードに失敗したとき、onRejected が呼ばれる", async () => {
+  test('アップロードに失敗したとき、onRejected が呼ばれる', async () => {
     mockUploadImage(500);
     const handleRejected = jest.fn();
     render(<TestComponent onRejected={handleRejected} />);

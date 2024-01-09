@@ -1,9 +1,9 @@
-import { ComponentMeta, ComponentStoryObj } from "@storybook/react";
-import { Textbox } from "./";
+import { ComponentMeta, ComponentStoryObj } from '@storybook/react';
+import { Textbox } from './';
 
 export default {
   component: Textbox,
-  args: { placeholder: "ここに文字を入力します" },
+  args: { placeholder: 'ここに文字を入力します' },
 } as ComponentMeta<typeof Textbox>;
 
 type Story = ComponentStoryObj<typeof Textbox>;

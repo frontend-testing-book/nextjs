@@ -1,17 +1,17 @@
-import { HttpError } from "@/lib/error";
-import * as MyProfile from "../";
-import { getMyProfileData } from "./fixture";
+import { HttpError } from '@/lib/error';
+import * as MyProfile from '../';
+import { getMyProfileData } from './fixture';
 
-jest.mock("../");
+jest.mock('../');
 
 export function mockGetMyProfileResolved() {
   return jest
-    .spyOn(MyProfile, "getMyProfile")
+    .spyOn(MyProfile, 'getMyProfile')
     .mockResolvedValue(getMyProfileData);
 }
 
 export function mockGetMyProfileRejected() {
   return jest
-    .spyOn(MyProfile, "getMyProfile")
+    .spyOn(MyProfile, 'getMyProfile')
     .mockRejectedValue(new HttpError(500).serialize());
 }

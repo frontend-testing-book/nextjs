@@ -4,10 +4,10 @@ import {
   MethodNotAllowedError,
   NotFoundError,
   UnauthorizedError,
-} from "@/lib/error";
-import { BasicLayoutDecorator, PCStory, SPStory } from "@/tests/storybook";
-import { ComponentMeta, ComponentStoryObj } from "@storybook/react";
-import { Error } from "./";
+} from '@/lib/error';
+import { BasicLayoutDecorator, PCStory, SPStory } from '@/tests/storybook';
+import { ComponentMeta, ComponentStoryObj } from '@storybook/react';
+import { Error } from './';
 
 export default {
   component: Error,

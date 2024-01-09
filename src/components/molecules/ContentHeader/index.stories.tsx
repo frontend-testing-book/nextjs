@@ -1,5 +1,5 @@
-import { ComponentMeta, ComponentStoryObj } from "@storybook/react";
-import { ContentHeader } from "./";
+import { ComponentMeta, ComponentStoryObj } from '@storybook/react';
+import { ContentHeader } from './';
 
 export default {
   component: ContentHeader,
@@ -8,5 +8,5 @@ export default {
 type Story = ComponentStoryObj<typeof ContentHeader>;
 
 export const Default: Story = {
-  args: { title: "見出し", description: "概要" },
+  args: { title: '見出し', description: '概要' },
 };

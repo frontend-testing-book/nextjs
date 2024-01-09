@@ -1,10 +1,10 @@
-import { generatePagination } from "@/lib/util/pagination";
-import { ComponentMeta, ComponentStoryObj } from "@storybook/react";
-import { Pagination } from "./";
+import { generatePagination } from '@/lib/util/pagination';
+import { ComponentMeta, ComponentStoryObj } from '@storybook/react';
+import { Pagination } from './';
 
 export default {
   component: Pagination,
-  args: { pathname: "/posts" },
+  args: { pathname: '/posts' },
 } as ComponentMeta<typeof Pagination>;
 
 type Story = ComponentStoryObj<typeof Pagination>;

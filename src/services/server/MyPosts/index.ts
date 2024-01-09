@@ -1,6 +1,6 @@
-import { CreateMyPostInput } from "@/lib/schema/MyPosts";
-import { getPagination, getPaginationSrc } from "@/lib/util/pagination";
-import { handlePrismaError, prisma } from "..";
+import { CreateMyPostInput } from '@/lib/schema/MyPosts';
+import { getPagination, getPaginationSrc } from '@/lib/util/pagination';
+import { handlePrismaError, prisma } from '..';
 
 export async function getMyPosts({
   page,
@@ -19,7 +19,7 @@ export async function getMyPosts({
         take,
         skip,
         where: { published, authorId },
-        orderBy: { updatedAt: "desc" },
+        orderBy: { updatedAt: 'desc' },
       }),
     ]);
     return {
@@ -38,7 +38,7 @@ export async function getMyPosts({
 export type GetMyPostsReturn = Awaited<ReturnType<typeof getMyPosts>>;
 
 export async function createMyPost(
-  input: CreateMyPostInput & { authorId: number }
+  input: CreateMyPostInput & { authorId: number },
 ) {
   try {
     const data = await prisma.post.create({ data: input });

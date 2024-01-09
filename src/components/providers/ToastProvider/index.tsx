@@ -1,13 +1,13 @@
-import { ReactNode } from "react";
-import { Toast } from "./Toast";
+import { ReactNode } from 'react';
+import { Toast } from './Toast';
 import {
   ToastActionContext,
   ToastState,
   ToastStateContext,
   ToastStyle,
-} from "./ToastContext";
-import { useToastProvider } from "./useToastProvider";
-export { useToastAction, useToastState } from "./hooks";
+} from './ToastContext';
+import { useToastProvider } from './useToastProvider';
+export { useToastAction, useToastState } from './hooks';
 export type { ToastState, ToastStyle };
 
 export const ToastProvider = ({

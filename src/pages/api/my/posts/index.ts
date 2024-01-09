@@ -1,11 +1,11 @@
-import { ApiHandler, handleNotAllowed, withLogin } from "@/lib/next/api";
+import { ApiHandler, handleNotAllowed, withLogin } from '@/lib/next/api';
 import {
   CreateMyPostInput,
   createMyPostInputSchema,
-} from "@/lib/schema/MyPosts";
-import { validate } from "@/lib/util";
-import type { CreateMyPostReturn } from "@/services/server/MyPosts";
-import { createMyPost } from "@/services/server/MyPosts";
+} from '@/lib/schema/MyPosts';
+import { validate } from '@/lib/util';
+import type { CreateMyPostReturn } from '@/services/server/MyPosts';
+import { createMyPost } from '@/services/server/MyPosts';
 
 export type PostInput = CreateMyPostInput;
 export type PostReturn = CreateMyPostReturn;
@@ -21,7 +21,7 @@ const handlePost = withLogin<CreateMyPostReturn>(async (req, res) => {
 
 const handler: ApiHandler<CreateMyPostReturn> = async (req, res) => {
   switch (req.method) {
-    case "POST":
+    case 'POST':
       return handlePost(req, res);
     default:
       return handleNotAllowed(res);

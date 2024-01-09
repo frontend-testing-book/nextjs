@@ -1,12 +1,12 @@
-import { getPagination, getPaginationSrc } from "@/lib/util/pagination";
-import { handlePrismaError, prisma } from "..";
+import { getPagination, getPaginationSrc } from '@/lib/util/pagination';
+import { handlePrismaError, prisma } from '..';
 
 const getOrderBy = (orderBy?: string) => {
   switch (orderBy) {
-    case "starCount":
-      return { likes: { _count: "desc" } } as const;
+    case 'starCount':
+      return { likes: { _count: 'desc' } } as const;
     default:
-      return { updatedAt: "desc" } as const;
+      return { updatedAt: 'desc' } as const;
   }
 };
 

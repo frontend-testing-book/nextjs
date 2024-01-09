@@ -1,16 +1,16 @@
-import { parseAsPositiveInt } from "@/lib/util";
-import { PaginationProps } from "@/lib/util/pagination";
-import Link from "next/link";
-import { useRouter } from "next/router";
-import { AnchorHTMLAttributes } from "react";
-import styles from "./styles.module.css";
+import { parseAsPositiveInt } from '@/lib/util';
+import { PaginationProps } from '@/lib/util/pagination';
+import Link from 'next/link';
+import { useRouter } from 'next/router';
+import { AnchorHTMLAttributes } from 'react';
+import styles from './styles.module.css';
 
 function isCurrent(
   a: number,
-  b: number
+  b: number,
 ): AnchorHTMLAttributes<HTMLAnchorElement> {
   return {
-    "aria-current": (a == 0 && b == 1) || a == b ? "page" : undefined,
+    'aria-current': (a == 0 && b == 1) || a == b ? 'page' : undefined,
   };
 }
 
@@ -29,7 +29,7 @@ export const Pagination = ({
       <ul className={styles.pagination}>
         {pagination?.items.map((item, index) => (
           <li key={index}>
-            {typeof item === "number" ? (
+            {typeof item === 'number' ? (
               <Link
                 href={{ pathname, query: { ...router.query, page: item } }}
                 legacyBehavior

@@ -1,14 +1,14 @@
-import { Err, errors, HttpError } from "@/lib/error";
-import { getSession } from "@/lib/next-session";
-import { assertAsUser, LoginUser } from "@/lib/schema/LoginUser";
-import type { NextApiHandler, NextApiRequest, NextApiResponse } from "next";
-import { ZodError } from "zod";
+import { Err, errors, HttpError } from '@/lib/error';
+import { getSession } from '@/lib/next-session';
+import { assertAsUser, LoginUser } from '@/lib/schema/LoginUser';
+import type { NextApiHandler, NextApiRequest, NextApiResponse } from 'next';
+import { ZodError } from 'zod';
 
 export type NextApiRequestWithLogin = NextApiRequest & { user: LoginUser };
 export type ApiHandler<T> = NextApiHandler<T | Err>;
 
 export function withLogin<T>(
-  next: (req: NextApiRequestWithLogin, res: NextApiResponse<T | Err>) => void
+  next: (req: NextApiRequestWithLogin, res: NextApiResponse<T | Err>) => void,
 ) {
   return async (req: NextApiRequest, res: NextApiResponse<T | Err>) => {
     try {
@@ -16,7 +16,7 @@ export function withLogin<T>(
       assertAsUser(session.user);
       await next(
         { ...req, user: session.user } as NextApiRequestWithLogin,
-        res
+        res,
       );
     } catch (err) {
       handleApiRouteError({ res, err });

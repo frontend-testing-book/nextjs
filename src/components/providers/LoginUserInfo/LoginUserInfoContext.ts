@@ -1,5 +1,5 @@
-import { GetMyProfileReturn } from "@/services/server/MyProfile";
-import { createContext } from "react";
+import { GetMyProfileReturn } from '@/services/server/MyProfile';
+import { createContext } from 'react';
 
 export type LoginUserInfoState = {
   error?: Error;

@@ -1,6 +1,6 @@
-import { NotFoundError } from "@/lib/error";
-import { UpdateMyProfileEditInput } from "@/lib/schema/MyProfileEdit";
-import { handlePrismaError, prisma } from "..";
+import { NotFoundError } from '@/lib/error';
+import { UpdateMyProfileEditInput } from '@/lib/schema/MyProfileEdit';
+import { handlePrismaError, prisma } from '..';
 
 export async function getMyProfileEdit({ id }: { id: number }) {
   try {

@@ -1,6 +1,6 @@
-import { Button } from "@/components/atoms/Button";
-import { useAlertDialogAction, useAlertDialogState } from "./hooks";
-import styles from "./styles.module.css";
+import { Button } from '@/components/atoms/Button';
+import { useAlertDialogAction, useAlertDialogState } from './hooks';
+import styles from './styles.module.css';
 
 export const AlertDialog = () => {
   const { isShown, message, okButtonLabel, cancelButtonLabel } =

@@ -1,17 +1,17 @@
-import clsx from "clsx";
-import Link from "next/link";
-import styles from "./styles.module.css";
+import clsx from 'clsx';
+import Link from 'next/link';
+import styles from './styles.module.css';
 
 type Props = {
-  theme?: "dark" | "light" | "transparent" | "blue" | "error";
-  variant?: "small" | "medium" | "large";
+  theme?: 'dark' | 'light' | 'transparent' | 'blue' | 'error';
+  variant?: 'small' | 'medium' | 'large';
   disabled?: boolean;
 } & React.ComponentPropsWithoutRef<typeof Link>;
 
 export const LinkButton = ({
   className,
-  theme = "dark",
-  variant = "medium",
+  theme = 'dark',
+  variant = 'medium',
   disabled,
   href,
   children,

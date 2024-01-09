@@ -1,10 +1,10 @@
-import { getSession } from "@/lib/next-session";
+import { getSession } from '@/lib/next-session';
 import {
   ApiHandler,
   handleApiRouteError,
   handleNotAllowed,
-} from "@/lib/next/api";
-import { postLogin } from "@/services/server/Login";
+} from '@/lib/next/api';
+import { postLogin } from '@/services/server/Login';
 
 export type PostReturn = { redirectUrl: string };
 
@@ -16,7 +16,7 @@ const handlePost: ApiHandler<PostReturn> = async (req, res) => {
     });
     const session = await getSession(req, res);
     session.user = user;
-    res.status(200).json({ redirectUrl: session.redirectUrl || "/" });
+    res.status(200).json({ redirectUrl: session.redirectUrl || '/' });
   } catch (err) {
     handleApiRouteError({ res, err });
   }
@@ -24,7 +24,7 @@ const handlePost: ApiHandler<PostReturn> = async (req, res) => {
 
 const handler: ApiHandler<PostReturn> = async (req, res) => {
   switch (req.method) {
-    case "POST":
+    case 'POST':
       return handlePost(req, res);
     default:
       return handleNotAllowed(res);

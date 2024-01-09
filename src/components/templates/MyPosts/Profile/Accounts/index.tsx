@@ -1,6 +1,6 @@
-import GitHub from "./assets/github.svg";
-import Twitter from "./assets/twitter.svg";
-import styles from "./styles.module.css";
+import GitHub from './assets/github.svg';
+import Twitter from './assets/twitter.svg';
+import styles from './styles.module.css';
 
 type Props = {
   githubAccount?: string;

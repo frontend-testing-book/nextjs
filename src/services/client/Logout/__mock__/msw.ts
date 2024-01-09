@@ -1,7 +1,7 @@
-import * as ApiLogout from "@/pages/api/logout";
-import { rest } from "msw";
-import { path } from "..";
-import { data } from "./fixture";
+import * as ApiLogout from '@/pages/api/logout';
+import { rest } from 'msw';
+import { path } from '..';
+import { data } from './fixture';
 
 export function handlePostLogout(args?: {
   mock?: jest.Mock<any, any>;
@@ -15,7 +15,7 @@ export function handlePostLogout(args?: {
         return res(ctx.status(args.status));
       }
       return res(ctx.status(200), ctx.json(data));
-    }
+    },
   );
 }
 

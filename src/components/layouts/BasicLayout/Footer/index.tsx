@@ -1,5 +1,5 @@
-import { memo } from "react";
-import styles from "./styles.module.css";
+import { memo } from 'react';
+import styles from './styles.module.css';
 
 export const Footer = memo(function BaseFooter() {
   return (

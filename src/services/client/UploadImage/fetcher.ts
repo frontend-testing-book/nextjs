@@ -1,7 +1,7 @@
-import mime from "mime-types";
-import { v4 as uuid } from "uuid";
-import { host } from "..";
-import { UploadImageData } from "./type";
+import mime from 'mime-types';
+import { v4 as uuid } from 'uuid';
+import { host } from '..';
+import { UploadImageData } from './type';
 
 export const path = () => host(`/upload/image`);
 
@@ -21,7 +21,7 @@ export async function uploadImage({
     formData.append(key, value as string);
   });
   return fetch(url, {
-    method: "POST",
+    method: 'POST',
     body: formData,
   }).then(() => ({ url, filename, fields }));
 }

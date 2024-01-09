@@ -1,12 +1,12 @@
-import { BasicLayout } from "@/components/layouts/BasicLayout";
-import { PageTitle } from "@/components/meta";
-import { Error } from "@/components/templates/Error";
-import { Post } from "@/components/templates/Post";
-import { withoutLogin } from "@/lib/next/gssp";
-import { NextPageWithGsspResult } from "@/lib/next/type";
-import { LoginUser } from "@/lib/schema/LoginUser";
-import { parseAsPositiveInt } from "@/lib/util";
-import { getPost, GetPostReturn } from "@/services/server/Post";
+import { BasicLayout } from '@/components/layouts/BasicLayout';
+import { PageTitle } from '@/components/meta';
+import { Error } from '@/components/templates/Error';
+import { Post } from '@/components/templates/Post';
+import { withoutLogin } from '@/lib/next/gssp';
+import { NextPageWithGsspResult } from '@/lib/next/type';
+import { LoginUser } from '@/lib/schema/LoginUser';
+import { parseAsPositiveInt } from '@/lib/util';
+import { getPost, GetPostReturn } from '@/services/server/Post';
 
 type Props = {
   post: GetPostReturn;
@@ -24,7 +24,7 @@ export const getServerSideProps = withoutLogin<Props>(
     const postId = parseAsPositiveInt(query.postId) || 0;
     const post = await getPost({ postId });
     return { post, user };
-  }
+  },
 );
 
 export default Page;

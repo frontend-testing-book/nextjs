@@ -1,7 +1,7 @@
-import { PutInput } from "@/pages/api/my/posts/[postId]";
-import { ComponentMeta, ComponentStoryObj } from "@storybook/react";
-import { useForm } from "react-hook-form";
-import { PostFormHeroImage } from "./";
+import { PutInput } from '@/pages/api/my/posts/[postId]';
+import { ComponentMeta, ComponentStoryObj } from '@storybook/react';
+import { useForm } from 'react-hook-form';
+import { PostFormHeroImage } from './';
 
 function TestComponent() {
   const {
@@ -10,7 +10,7 @@ function TestComponent() {
     formState: { errors },
   } = useForm<PutInput>();
   return (
-    <div style={{ display: "flex", height: "120px" }}>
+    <div style={{ display: 'flex', height: '120px' }}>
       <PostFormHeroImage
         register={register}
         setValue={setValue}

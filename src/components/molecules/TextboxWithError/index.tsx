@@ -1,7 +1,7 @@
-import { ErrorMessage } from "@/components/atoms/ErrorMessage";
-import { Textbox } from "@/components/atoms/Textbox";
-import { ComponentProps, forwardRef, useId } from "react";
-import styles from "./styles.module.css";
+import { ErrorMessage } from '@/components/atoms/ErrorMessage';
+import { Textbox } from '@/components/atoms/Textbox';
+import { ComponentProps, forwardRef, useId } from 'react';
+import styles from './styles.module.css';
 
 type Props = ComponentProps<typeof Textbox> & {
   error?: string;
@@ -25,5 +25,5 @@ export const TextboxWithError = forwardRef<HTMLInputElement, Props>(
         )}
       </>
     );
-  }
+  },
 );

@@ -1,8 +1,8 @@
-import { act, renderHook } from "@testing-library/react";
-import { ToastStyle } from "./ToastContext";
-import { useToastProvider } from "./useToastProvider";
+import { act, renderHook } from '@testing-library/react';
+import { ToastStyle } from './ToastContext';
+import { useToastProvider } from './useToastProvider';
 
-test("showToast, hideToast で表示を切り替え", () => {
+test('showToast, hideToast で表示を切り替え', () => {
   const { result } = renderHook(() => useToastProvider());
   expect(result.current).toMatchObject({ isShown: false });
   act(() => {
@@ -15,11 +15,11 @@ test("showToast, hideToast で表示を切り替え", () => {
   expect(result.current).toMatchObject({ isShown: false });
 });
 
-test("message, style で見た目を変更", () => {
+test('message, style で見た目を変更', () => {
   const { result } = renderHook(() => useToastProvider());
-  expect(result.current).toMatchObject({ message: "", style: "succeed" });
-  const message = "...loading";
-  const style: ToastStyle = "busy";
+  expect(result.current).toMatchObject({ message: '', style: 'succeed' });
+  const message = '...loading';
+  const style: ToastStyle = 'busy';
   act(() => {
     result.current.showToast({ message, style });
   });
