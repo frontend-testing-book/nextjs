@@ -1,4 +1,5 @@
 import { LinkButton } from '@/components/atoms/LinkButton';
+
 import styles from './styles.module.css';
 
 export const NoItems = () => {

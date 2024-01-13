@@ -1,10 +1,12 @@
-import * as MyProfile from '@/services/client/MyProfile/__mock__/msw';
-import * as MyProfileEdit from '@/services/client/MyProfileEdit/__mock__/msw';
-import { setupMockServer } from '@/tests/jest';
-import { composeStories } from '@storybook/testing-react';
+import { composeStories } from '@storybook/react';
 import { render, screen, waitFor } from '@testing-library/react';
 import userEvent from '@testing-library/user-event';
 import mockRouter from 'next-router-mock';
+
+import * as MyProfile from '@/services/client/MyProfile/__mock__/msw';
+import * as MyProfileEdit from '@/services/client/MyProfileEdit/__mock__/msw';
+import { setupMockServer } from '@/tests/jest';
+
 import * as stories from './index.stories';
 
 const { Default } = composeStories(stories);

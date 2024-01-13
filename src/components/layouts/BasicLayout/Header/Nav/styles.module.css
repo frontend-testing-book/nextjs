@@ -15,7 +15,7 @@
   border-color: var(--light-gray);
 }
 
-.list a[aria-current="page"] {
+.list a[aria-current='page'] {
   border-color: var(--orange);
 }
 
@@ -57,7 +57,7 @@
 
   .closeMenu::before,
   .closeMenu::after {
-    content: "";
+    content: '';
   }
 
   .closeMenu span,

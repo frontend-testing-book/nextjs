@@ -1,4 +1,5 @@
 import { getPagination } from '@/lib/util/pagination';
+
 import { GetPostsReturn } from '../';
 
 export const getPostsData: GetPostsReturn = {
@@ -13,6 +14,8 @@ export const getPostsData: GetPostsReturn = {
       authorId: 1,
       likeCount: 1,
       authorName: 'TaroYamada',
+      createdAt: new Date('2021-01-01T00:00:00.000Z'),
+      updatedAt: new Date('2021-01-01T00:00:00.000Z'),
     },
     {
       id: 2,
@@ -24,6 +27,8 @@ export const getPostsData: GetPostsReturn = {
       authorId: 1,
       likeCount: 1,
       authorName: 'TaroYamada',
+      createdAt: new Date('2021-01-01T00:00:00.000Z'),
+      updatedAt: new Date('2021-01-01T00:00:00.000Z'),
     },
     {
       id: 3,
@@ -35,6 +40,8 @@ export const getPostsData: GetPostsReturn = {
       authorId: 1,
       likeCount: 1,
       authorName: 'TaroYamada',
+      createdAt: new Date('2021-01-01T00:00:00.000Z'),
+      updatedAt: new Date('2021-01-01T00:00:00.000Z'),
     },
     {
       id: 4,
@@ -46,6 +53,8 @@ export const getPostsData: GetPostsReturn = {
       authorId: 1,
       likeCount: 1,
       authorName: 'TaroYamada',
+      createdAt: new Date('2021-01-01T00:00:00.000Z'),
+      updatedAt: new Date('2021-01-01T00:00:00.000Z'),
     },
     {
       id: 5,
@@ -57,6 +66,8 @@ export const getPostsData: GetPostsReturn = {
       authorId: 1,
       likeCount: 1,
       authorName: 'TaroYamada',
+      createdAt: new Date('2021-01-01T00:00:00.000Z'),
+      updatedAt: new Date('2021-01-01T00:00:00.000Z'),
     },
     {
       id: 6,
@@ -68,6 +79,8 @@ export const getPostsData: GetPostsReturn = {
       authorId: 1,
       likeCount: 1,
       authorName: 'TaroYamada',
+      createdAt: new Date('2021-01-01T00:00:00.000Z'),
+      updatedAt: new Date('2021-01-01T00:00:00.000Z'),
     },
     {
       id: 7,
@@ -79,6 +92,8 @@ export const getPostsData: GetPostsReturn = {
       authorId: 1,
       likeCount: 1,
       authorName: 'TaroYamada',
+      createdAt: new Date('2021-01-01T00:00:00.000Z'),
+      updatedAt: new Date('2021-01-01T00:00:00.000Z'),
     },
   ],
   ...getPagination({

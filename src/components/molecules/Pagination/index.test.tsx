@@ -1,7 +1,9 @@
-import { generatePagination } from '@/lib/util/pagination';
 import { render, screen } from '@testing-library/react';
 import userEvent from '@testing-library/user-event';
 import mockRouter from 'next-router-mock';
+
+import { generatePagination } from '@/lib/util/pagination';
+
 import { Pagination } from '.';
 
 const user = userEvent.setup();

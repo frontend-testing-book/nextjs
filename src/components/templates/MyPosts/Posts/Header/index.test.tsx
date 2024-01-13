@@ -1,6 +1,7 @@
 import { render, screen } from '@testing-library/react';
 import userEvent from '@testing-library/user-event';
 import mockRouter from 'next-router-mock';
+
 import { Header } from './';
 
 const user = userEvent.setup();
@@ -15,17 +16,17 @@ function setup(url = '/my/posts?page=1') {
   return { combobox, selectOption };
 }
 
-test('デフォルトでは「すべて」が選択されている', async () => {
+test('デフォルトでは「すべて」が選択されている', () => {
   const { combobox } = setup();
   expect(combobox).toHaveDisplayValue('すべて');
 });
 
-test('status?=public のアクセス場合「公開」が選択されている', async () => {
+test('status?=public のアクセス場合「公開」が選択されている', () => {
   const { combobox } = setup('/my/posts?status=public');
   expect(combobox).toHaveDisplayValue('公開');
 });
 
-test('staus?=private のアクセス場合「下書き」が選択されている', async () => {
+test('staus?=private のアクセス場合「下書き」が選択されている', () => {
   const { combobox } = setup('/my/posts?status=private');
   expect(combobox).toHaveDisplayValue('下書き');
 });

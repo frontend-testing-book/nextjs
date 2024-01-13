@@ -1,6 +1,8 @@
+import bcrypt from 'bcryptjs';
+
 import { NotFoundError } from '@/lib/error';
 import { ValidationError } from '@/lib/error/validation';
-import bcrypt from 'bcryptjs';
+
 import { handlePrismaError, prisma } from '..';
 
 export async function postLogin(input: { email: string; password: string }) {

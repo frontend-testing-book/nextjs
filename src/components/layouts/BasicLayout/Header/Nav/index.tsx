@@ -1,6 +1,7 @@
 import Link from 'next/link';
 import { useRouter } from 'next/router';
 import { AnchorHTMLAttributes } from 'react';
+
 import styles from './styles.module.css';
 
 function isCurrent(flag: boolean): AnchorHTMLAttributes<HTMLAnchorElement> {

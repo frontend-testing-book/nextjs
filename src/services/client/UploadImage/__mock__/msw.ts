@@ -1,6 +1,7 @@
 import { rest } from 'msw';
-import { path } from '..';
+
 import { uploadImageData } from './fixture';
+import { path } from '..';
 
 export function handleUploadImage() {
   return rest.post(path(), async (req, res, ctx) => {

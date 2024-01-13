@@ -1,8 +1,9 @@
-import { BasicLayout } from '@/components/layouts/BasicLayout';
-import { LoginUserInfoProvider } from '@/components/providers/LoginUserInfo';
 import { INITIAL_VIEWPORTS } from '@storybook/addon-viewport';
 import { Args, PartialStoryFn } from '@storybook/csf';
 import { ReactRenderer } from '@storybook/react';
+
+import { BasicLayout } from '@/components/layouts/BasicLayout';
+import { LoginUserInfoProvider } from '@/components/providers/LoginUserInfo';
 
 export const BasicLayoutDecorator = (
   Story: PartialStoryFn<ReactRenderer, Args>,

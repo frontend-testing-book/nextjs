@@ -1,8 +1,10 @@
+import { ZodError } from 'zod';
+
 import { Err, errors, HttpError } from '@/lib/error';
 import { getSession } from '@/lib/next-session';
 import { assertAsUser, LoginUser } from '@/lib/schema/LoginUser';
+
 import type { NextApiHandler, NextApiRequest, NextApiResponse } from 'next';
-import { ZodError } from 'zod';
 
 export type NextApiRequestWithLogin = NextApiRequest & { user: LoginUser };
 export type ApiHandler<T> = NextApiHandler<T | Err>;
@@ -14,10 +16,7 @@ export function withLogin<T>(
     try {
       const session = await getSession(req, res);
       assertAsUser(session.user);
-      await next(
-        { ...req, user: session.user } as NextApiRequestWithLogin,
-        res,
-      );
+      next({ ...req, user: session.user } as NextApiRequestWithLogin, res);
     } catch (err) {
       handleApiRouteError({ res, err });
     }

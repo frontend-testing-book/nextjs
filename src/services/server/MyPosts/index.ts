@@ -1,5 +1,6 @@
 import { CreateMyPostInput } from '@/lib/schema/MyPosts';
 import { getPagination, getPaginationSrc } from '@/lib/util/pagination';
+
 import { handlePrismaError, prisma } from '..';
 
 export async function getMyPosts({
@@ -23,7 +24,7 @@ export async function getMyPosts({
       }),
     ]);
     return {
-      posts: data.map(({ createdAt, updatedAt, ...data }) => data),
+      posts: data.map(({ ...data }) => data),
       ...getPagination({
         take,
         skip,
@@ -42,7 +43,7 @@ export async function createMyPost(
 ) {
   try {
     const data = await prisma.post.create({ data: input });
-    const { createdAt, updatedAt, ...res } = data;
+    const { ...res } = data;
     return res;
   } catch (err) {
     handlePrismaError(err);

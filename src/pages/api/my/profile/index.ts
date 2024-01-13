@@ -3,6 +3,7 @@ import { getMyProfile, GetMyProfileReturn } from '@/services/server/MyProfile';
 
 export type GetReturn = GetMyProfileReturn;
 
+// eslint-disable-next-line @typescript-eslint/no-misused-promises
 const handleGet = withLogin<GetReturn>(async (req, res) => {
   const user = await getMyProfile({ id: req.user.id });
   res.status(200).json(user);

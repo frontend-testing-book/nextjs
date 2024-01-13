@@ -1,7 +1,9 @@
-import { useToastAction } from '@/components/providers/ToastProvider/hooks';
-import { ToastStyle } from '@/components/providers/ToastProvider/ToastContext';
 import { useState } from 'react';
 import { useTimeoutFn } from 'react-use';
+
+import { ToastStyle } from '@/components/providers/ToastProvider/ToastContext';
+import { useToastAction } from '@/components/providers/ToastProvider/hooks';
+
 import Failed from './assets/failed.svg';
 import Succeed from './assets/succeed.svg';
 import styles from './styles.module.css';

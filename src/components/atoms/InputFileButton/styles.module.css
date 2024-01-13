@@ -15,12 +15,12 @@
   cursor: pointer;
 }
 
-.module input:hover + [data-theme="dark"] {
+.module input:hover + [data-theme='dark'] {
   border-color: var(--white);
   background-color: var(--dark-navy);
 }
 
-.module input:hover + [data-theme="light"] {
+.module input:hover + [data-theme='light'] {
   color: var(--light-gray);
   background-color: var(--white);
 }

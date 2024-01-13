@@ -1,7 +1,9 @@
-import { getMyProfileData } from '@/services/server/MyProfile/__mock__/fixture';
 import { render, screen } from '@testing-library/react';
 import userEvent from '@testing-library/user-event';
 import mockRouter from 'next-router-mock';
+
+import { getMyProfileData } from '@/services/server/MyProfile/__mock__/fixture';
+
 import { Profile } from './';
 
 const user = userEvent.setup();

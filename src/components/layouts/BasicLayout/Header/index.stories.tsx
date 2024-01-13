@@ -1,8 +1,10 @@
-import { handleGetMyProfile } from '@/services/client/MyProfile/__mock__/msw';
-import { LoginUserInfoProviderDecorator, SPStory } from '@/tests/storybook';
 import { expect } from '@storybook/jest';
 import { ComponentMeta, ComponentStoryObj } from '@storybook/react';
 import { userEvent as user, waitFor, within } from '@storybook/testing-library';
+
+import { handleGetMyProfile } from '@/services/client/MyProfile/__mock__/msw';
+import { LoginUserInfoProviderDecorator, SPStory } from '@/tests/storybook';
+
 import { Header } from './';
 
 export default {

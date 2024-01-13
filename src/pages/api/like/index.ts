@@ -1,10 +1,12 @@
+import { z } from 'zod';
+
 import { ApiHandler, handleNotAllowed, withLogin } from '@/lib/next/api';
 import { validate } from '@/lib/util';
 import { postLike, PostLikeReturn } from '@/services/server/Like';
-import { z } from 'zod';
 
 export type PostReturn = PostLikeReturn;
 
+// eslint-disable-next-line @typescript-eslint/no-misused-promises
 const handlePost = withLogin<PostReturn>(async (req, res) => {
   validate(req.body, z.object({ postId: z.number() }));
   const data = await postLike({

@@ -4,12 +4,14 @@ import {
   createMyPostInputSchema,
 } from '@/lib/schema/MyPosts';
 import { validate } from '@/lib/util';
-import type { CreateMyPostReturn } from '@/services/server/MyPosts';
 import { createMyPost } from '@/services/server/MyPosts';
+
+import type { CreateMyPostReturn } from '@/services/server/MyPosts';
 
 export type PostInput = CreateMyPostInput;
 export type PostReturn = CreateMyPostReturn;
 
+// eslint-disable-next-line @typescript-eslint/no-misused-promises
 const handlePost = withLogin<CreateMyPostReturn>(async (req, res) => {
   validate(req.body, createMyPostInputSchema);
   const post = await createMyPost({

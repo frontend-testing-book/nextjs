@@ -1,8 +1,10 @@
 import { rest } from 'msw';
-import { path } from '..';
+
 import { getMyProfileData } from './fixture';
+import { path } from '..';
 
 export function handleGetMyProfile(args?: {
+  // eslint-disable-next-line @typescript-eslint/no-explicit-any
   mock?: jest.Mock<any, any>;
   status?: number;
 }) {

@@ -1,4 +1,3 @@
-import { BadRequestError, InternalServerError } from '@/lib/error';
 import { PrismaClient } from '@prisma/client';
 import {
   PrismaClientInitializationError,
@@ -7,9 +6,12 @@ import {
   PrismaClientValidationError,
 } from '@prisma/client/runtime';
 
+import { BadRequestError, InternalServerError } from '@/lib/error';
+
 export const prisma = new PrismaClient();
 if (process.env.NODE_ENV === 'development') {
-  // MEMO: HMR 対応　https://www.prisma.io/docs/guides/performance-and-optimization/connection-management#prevent-hot-reloading-from-creating-new-instances-of-prismaclient
+  // MEMO: HMR 対応 https://www.prisma.io/docs/guides/performance-and-optimization/connection-management#prevent-hot-reloading-from-creating-new-instances-of-prismaclient
+  // eslint-disable-next-line @typescript-eslint/no-unsafe-member-access, @typescript-eslint/no-explicit-any
   (global as any).prisma = prisma;
 }
 

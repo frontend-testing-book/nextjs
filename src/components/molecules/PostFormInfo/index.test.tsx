@@ -1,7 +1,9 @@
-import { PutInput } from '@/pages/api/my/posts/[postId]';
 import { render, screen } from '@testing-library/react';
 import userEvent from '@testing-library/user-event';
 import { useForm } from 'react-hook-form';
+
+import { PutInput } from '@/pages/api/my/posts/[postId]';
+
 import { PostFormInfo } from './';
 
 const user = userEvent.setup();

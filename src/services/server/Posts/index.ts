@@ -1,4 +1,5 @@
 import { getPagination, getPaginationSrc } from '@/lib/util/pagination';
+
 import { handlePrismaError, prisma } from '..';
 
 const getOrderBy = (orderBy?: string) => {
@@ -31,7 +32,7 @@ export async function getPosts({
       }),
     ]);
     return {
-      posts: data.map(({ createdAt, updatedAt, likes, author, ...data }) => ({
+      posts: data.map(({ likes, author, ...data }) => ({
         ...data,
         likeCount: likes.length,
         authorName: author.name,

@@ -1,6 +1,8 @@
 import { PaginationInfo } from '@/components/atoms/PaginationInfo';
 import { Pagination } from '@/components/molecules/Pagination';
+
 import { GetPostsReturn } from '@/services/server/Posts';
+
 import { Header } from './Header';
 import { PostItem } from './PostItem';
 import styles from './styles.module.css';

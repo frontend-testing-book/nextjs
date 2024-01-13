@@ -1,7 +1,9 @@
-import { getPostsData } from '@/services/server/Posts/__mock__/fixture';
 import { render, screen } from '@testing-library/react';
 import userEvent from '@testing-library/user-event';
 import mockRouter from 'next-router-mock';
+
+import { getPostsData } from '@/services/server/Posts/__mock__/fixture';
+
 import { PostItem } from './';
 
 const user = userEvent.setup();
@@ -14,7 +16,7 @@ const setup = (published = true) => {
   return { post, link, click };
 };
 
-test('リンクのアクセシブルネームはタイトルを参照する', async () => {
+test('リンクのアクセシブルネームはタイトルを参照する', () => {
   const { post, link } = setup();
   expect(link).toHaveAccessibleName(post.title);
 });

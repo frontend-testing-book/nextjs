@@ -9,7 +9,6 @@
   border-bottom: 1px solid var(--dark-navy);
 }
 
-
 .menu {
   display: flex;
 }
@@ -61,7 +60,7 @@
 
   .openMenu::before,
   .openMenu::after {
-    content: "";
+    content: '';
   }
 
   .openMenu span,

@@ -1,5 +1,7 @@
-import { generatePagination } from '@/lib/util/pagination';
 import { ComponentMeta, ComponentStoryObj } from '@storybook/react';
+
+import { generatePagination } from '@/lib/util/pagination';
+
 import { Pagination } from './';
 
 export default {

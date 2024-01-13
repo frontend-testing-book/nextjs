@@ -1,8 +1,10 @@
 import { render, screen } from '@testing-library/react';
 import userEvent from '@testing-library/user-event';
-import { ToastProvider } from './';
-import { useToastAction } from './hooks';
+
 import { ToastState } from './ToastContext';
+import { useToastAction } from './hooks';
+
+import { ToastProvider } from './';
 
 // #### 1.テスト用のコンポーネントを用意し、インタラクションを実行する
 

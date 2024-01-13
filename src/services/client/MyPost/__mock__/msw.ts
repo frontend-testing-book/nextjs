@@ -1,6 +1,7 @@
 import { rest } from 'msw';
-import { path } from '..';
+
 import { deleteMyPostData, updateMyPostData } from './fixture';
+import { path } from '..';
 
 export function handlePutMyPost(args?: { status?: number }) {
   return rest.put(path(':id'), async (_, res, ctx) => {

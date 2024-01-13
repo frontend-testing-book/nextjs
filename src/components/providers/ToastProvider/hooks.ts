@@ -1,4 +1,5 @@
 import { useContext } from 'react';
+
 import { ToastActionContext, ToastStateContext } from './ToastContext';
 
 export function useToastAction() {

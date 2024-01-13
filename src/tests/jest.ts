@@ -1,7 +1,8 @@
 import { screen } from '@testing-library/react';
 import userEvent from '@testing-library/user-event';
-import type { RequestHandler } from 'msw';
 import { setupServer } from 'msw/node';
+
+import type { RequestHandler } from 'msw';
 
 export function setupMockServer(...handlers: RequestHandler[]) {
   const server = setupServer(...handlers);

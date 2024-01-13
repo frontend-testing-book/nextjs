@@ -1,4 +1,5 @@
 import { render, screen } from '@testing-library/react';
+
 import { Switch } from '.';
 
 test("[role='switch']", () => {

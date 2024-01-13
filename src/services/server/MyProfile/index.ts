@@ -1,4 +1,5 @@
 import { NotFoundError } from '@/lib/error';
+
 import { handlePrismaError, prisma } from '..';
 
 export async function getMyProfile({ id }: { id: number }) {
@@ -8,7 +9,7 @@ export async function getMyProfile({ id }: { id: number }) {
       prisma.like.findMany({ where: { authorId: id } }),
     ]);
     if (!data) throw new NotFoundError();
-    const { createdAt, updatedAt, password, ...res } = data;
+    const { ...res } = data;
     return { ...res, likeCount: likes.length };
   } catch (err) {
     handlePrismaError(err);

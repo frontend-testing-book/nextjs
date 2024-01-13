@@ -1,12 +1,14 @@
-import { getMyPostData } from '@/services/server/MyPost/__mock__/fixture';
 import { render, screen, waitFor } from '@testing-library/react';
 import userEvent from '@testing-library/user-event';
 import mockRouter from 'next-router-mock';
+
+import { getMyPostData } from '@/services/server/MyPost/__mock__/fixture';
+
 import { MyPost } from './';
 
 const user = userEvent.setup();
 
-test('見出しの表示', async () => {
+test('見出しの表示', () => {
   render(<MyPost post={getMyPostData} />);
   expect(
     screen.getByRole('heading', { name: 'Frontend Testing Example' }),

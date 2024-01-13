@@ -1,7 +1,9 @@
-import { GetMyPostsReturn } from '@/services/server/MyPosts';
 import clsx from 'clsx';
 import Link from 'next/link';
 import { useId } from 'react';
+
+import { GetMyPostsReturn } from '@/services/server/MyPosts';
+
 import styles from './styles.module.css';
 
 export const PostItem = ({ post }: { post: GetMyPostsReturn['posts'][0] }) => {

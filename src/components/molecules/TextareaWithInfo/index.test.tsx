@@ -1,10 +1,11 @@
-import { composeStories } from '@storybook/testing-react';
+import { composeStories } from '@storybook/react';
 import { render, screen } from '@testing-library/react';
+
 import * as stories from './index.stories';
 
 const { FullProps } = composeStories(stories);
 
-test('TextareaWithInfo', async () => {
+test('TextareaWithInfo', () => {
   render(<FullProps />);
   expect(screen.getByRole('textbox')).toHaveAccessibleName('記事本文');
   expect(screen.getByRole('textbox')).toHaveAccessibleDescription(

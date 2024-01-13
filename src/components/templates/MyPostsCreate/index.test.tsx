@@ -1,17 +1,19 @@
+import { composeStories } from '@storybook/react';
+import { render, screen, waitFor } from '@testing-library/react';
+import userEvent from '@testing-library/user-event';
+import mockRouter from 'next-router-mock';
+
 import * as MyPosts from '@/services/client/MyPosts/__mock__/msw';
 import * as MyProfile from '@/services/client/MyProfile/__mock__/msw';
 import { mockUploadImage } from '@/services/client/UploadImage/__mock__/jest';
 import { selectImageFile, setupMockServer } from '@/tests/jest';
-import { composeStories } from '@storybook/testing-react';
-import { render, screen, waitFor } from '@testing-library/react';
-import userEvent from '@testing-library/user-event';
-import mockRouter from 'next-router-mock';
+
 import * as stories from './index.stories';
 
 const { Default } = composeStories(stories);
 const user = userEvent.setup();
 
-async function setup() {
+function setup() {
   const { container } = render(<Default />);
   const { selectImage } = selectImageFile();
   async function typeTitle(title: string) {
@@ -47,7 +49,7 @@ beforeEach(() => {
 
 describe('AlertDialog', () => {
   test('公開を試みた時、AlertDialog が表示される', async () => {
-    const { typeTitle, saveAsPublished, selectImage } = await setup();
+    const { typeTitle, saveAsPublished, selectImage } = setup();
     await typeTitle('201');
     await selectImage();
     await saveAsPublished();
@@ -57,8 +59,7 @@ describe('AlertDialog', () => {
   });
 
   test('「いいえ」を押下すると、AlertDialog が閉じる', async () => {
-    const { typeTitle, saveAsPublished, clickButton, selectImage } =
-      await setup();
+    const { typeTitle, saveAsPublished, clickButton, selectImage } = setup();
     await typeTitle('201');
     await selectImage();
     await saveAsPublished();
@@ -67,8 +68,8 @@ describe('AlertDialog', () => {
   });
 
   test('不適正内容で送信を試みると、AlertDialog が閉じる', async () => {
-    const { saveAsPublished, clickButton, selectImage } = await setup();
-    // await typeTitle("201");　タイトルが入力されていない
+    const { saveAsPublished, clickButton, selectImage } = setup();
+    // await typeTitle("201"); タイトルが入力されていない
     await selectImage();
     await saveAsPublished();
     await clickButton('はい');
@@ -83,8 +84,7 @@ describe('AlertDialog', () => {
 
 describe('Toast', () => {
   test('API 通信を開始した時「保存中…」が表示される', async () => {
-    const { typeTitle, saveAsPublished, clickButton, selectImage } =
-      await setup();
+    const { typeTitle, saveAsPublished, clickButton, selectImage } = setup();
     await typeTitle('201');
     await selectImage();
     await saveAsPublished();
@@ -95,8 +95,7 @@ describe('Toast', () => {
   });
 
   test('公開に成功した場合「公開に成功しました」が表示される', async () => {
-    const { typeTitle, saveAsPublished, clickButton, selectImage } =
-      await setup();
+    const { typeTitle, saveAsPublished, clickButton, selectImage } = setup();
     await typeTitle('hoge');
     await selectImage();
     await saveAsPublished();
@@ -107,8 +106,7 @@ describe('Toast', () => {
   });
 
   test('公開に失敗した場合「公開に失敗しました」が表示される', async () => {
-    const { typeTitle, saveAsPublished, clickButton, selectImage } =
-      await setup();
+    const { typeTitle, saveAsPublished, clickButton, selectImage } = setup();
     await typeTitle('500');
     await selectImage();
     await saveAsPublished();
@@ -121,7 +119,7 @@ describe('Toast', () => {
 
 describe('画面遷移', () => {
   test('下書き保存した場合、下書きした記事ページに遷移する', async () => {
-    const { typeTitle, saveAsDraft, selectImage } = await setup();
+    const { typeTitle, saveAsDraft, selectImage } = setup();
     await typeTitle('201');
     await selectImage();
     await saveAsDraft();
@@ -131,8 +129,7 @@ describe('画面遷移', () => {
   });
 
   test('公開に成功した場合、画面遷移する', async () => {
-    const { typeTitle, saveAsPublished, clickButton, selectImage } =
-      await setup();
+    const { typeTitle, saveAsPublished, clickButton, selectImage } = setup();
     await typeTitle('201');
     await selectImage();
     await saveAsPublished();

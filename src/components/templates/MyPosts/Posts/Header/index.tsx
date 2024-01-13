@@ -1,6 +1,9 @@
-import { SelectFilterOption } from '@/components/molecules/SelectFilterOption';
-import { parseAsNonEmptyString } from '@/lib/util';
 import { useRouter } from 'next/router';
+
+import { SelectFilterOption } from '@/components/molecules/SelectFilterOption';
+
+import { parseAsNonEmptyString } from '@/lib/util';
+
 import styles from './styles.module.css';
 
 const options = [
@@ -22,7 +25,7 @@ export const Header = () => {
           defaultValue,
           onChange: (event) => {
             const status = event.target.value;
-            push({ query: { ...query, status } });
+            void push({ query: { ...query, status } });
           },
         }}
       />

@@ -1,4 +1,5 @@
 import { getPagination } from '@/lib/util/pagination';
+
 import { CreateMyPostReturn, GetMyPostsReturn } from '../';
 
 export const getMyPostsData: GetMyPostsReturn = {
@@ -11,6 +12,8 @@ export const getMyPostsData: GetMyPostsReturn = {
       imageUrl: '/__mocks__/images/img01.jpg',
       published: true,
       authorId: 1,
+      createdAt: new Date('2021-01-01T00:00:00.000Z'),
+      updatedAt: new Date('2021-01-01T00:00:00.000Z'),
     },
     {
       id: 2,
@@ -20,6 +23,8 @@ export const getMyPostsData: GetMyPostsReturn = {
       imageUrl: '/__mocks__/images/img02.jpg',
       published: true,
       authorId: 1,
+      createdAt: new Date('2021-01-01T00:00:00.000Z'),
+      updatedAt: new Date('2021-01-01T00:00:00.000Z'),
     },
     {
       id: 3,
@@ -29,6 +34,8 @@ export const getMyPostsData: GetMyPostsReturn = {
       imageUrl: '/__mocks__/images/img03.jpg',
       published: false,
       authorId: 1,
+      createdAt: new Date('2021-01-01T00:00:00.000Z'),
+      updatedAt: new Date('2021-01-01T00:00:00.000Z'),
     },
     {
       id: 4,
@@ -38,6 +45,8 @@ export const getMyPostsData: GetMyPostsReturn = {
       imageUrl: '/__mocks__/images/img04.jpg',
       published: true,
       authorId: 1,
+      createdAt: new Date('2021-01-01T00:00:00.000Z'),
+      updatedAt: new Date('2021-01-01T00:00:00.000Z'),
     },
     {
       id: 5,
@@ -47,6 +56,8 @@ export const getMyPostsData: GetMyPostsReturn = {
       imageUrl: '/__mocks__/images/img05.jpg',
       published: true,
       authorId: 1,
+      createdAt: new Date('2021-01-01T00:00:00.000Z'),
+      updatedAt: new Date('2021-01-01T00:00:00.000Z'),
     },
     {
       id: 6,
@@ -56,6 +67,8 @@ export const getMyPostsData: GetMyPostsReturn = {
       imageUrl: '/__mocks__/images/img06.jpg',
       published: true,
       authorId: 1,
+      createdAt: new Date('2021-01-01T00:00:00.000Z'),
+      updatedAt: new Date('2021-01-01T00:00:00.000Z'),
     },
     {
       id: 7,
@@ -65,6 +78,8 @@ export const getMyPostsData: GetMyPostsReturn = {
       imageUrl: '/__mocks__/images/img07.jpg',
       published: true,
       authorId: 1,
+      createdAt: new Date('2021-01-01T00:00:00.000Z'),
+      updatedAt: new Date('2021-01-01T00:00:00.000Z'),
     },
   ],
   ...getPagination({
@@ -89,4 +104,6 @@ export const createMyPostsData: CreateMyPostReturn = {
   imageUrl: '/__mocks__/images/img01.jpg',
   published: true,
   authorId: 1,
+  createdAt: new Date('2021-01-01T00:00:00.000Z'),
+  updatedAt: new Date('2021-01-01T00:00:00.000Z'),
 };

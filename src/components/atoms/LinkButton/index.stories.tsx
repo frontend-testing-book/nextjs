@@ -1,4 +1,5 @@
 import { ComponentMeta, ComponentStoryObj } from '@storybook/react';
+
 import { LinkButton } from './';
 
 export default {

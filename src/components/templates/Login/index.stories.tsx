@@ -1,6 +1,8 @@
+import { ComponentMeta, ComponentStoryObj } from '@storybook/react';
+
 import { handleGetMyProfile } from '@/services/client/MyProfile/__mock__/msw';
 import { BasicLayoutDecorator, PCStory, SPStory } from '@/tests/storybook';
-import { ComponentMeta, ComponentStoryObj } from '@storybook/react';
+
 import { Login } from './';
 
 export default {

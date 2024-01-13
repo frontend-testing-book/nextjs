@@ -3,6 +3,6 @@
   color: var(--light-gray);
 }
 
-.module[data-invalid="true"] {
+.module[data-invalid='true'] {
   color: var(--orange);
 }

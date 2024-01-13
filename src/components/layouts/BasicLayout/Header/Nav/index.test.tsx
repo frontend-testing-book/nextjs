@@ -1,5 +1,6 @@
 import { render, screen } from '@testing-library/react';
 import mockRouter from 'next-router-mock';
+
 import { Nav } from './';
 
 test('「My Posts」がカレント状態になっている', () => {

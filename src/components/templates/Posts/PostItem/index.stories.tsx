@@ -1,5 +1,7 @@
-import { getPostsData } from '@/services/server/Posts/__mock__/fixture';
 import { ComponentMeta, ComponentStoryObj } from '@storybook/react';
+
+import { getPostsData } from '@/services/server/Posts/__mock__/fixture';
+
 import { PostItem } from './';
 
 export default {

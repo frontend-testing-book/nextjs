@@ -1,8 +1,11 @@
+import { Control, UseFormRegister, useWatch } from 'react-hook-form';
+
 import { Button } from '@/components/atoms/Button';
 import { Switch } from '@/components/atoms/Switch';
 import { ContentFooter } from '@/components/molecules/ContentFooter';
+
 import { PutInput } from '@/pages/api/my/posts/[postId]';
-import { Control, UseFormRegister, useWatch } from 'react-hook-form';
+
 import styles from './styles.module.css';
 
 const SaveButton = ({
@@ -38,6 +41,7 @@ export const PostFormFooter = ({
 }: {
   control: Control<PutInput>;
   isSubmitting: boolean;
+  // eslint-disable-next-line @typescript-eslint/no-explicit-any
   register: UseFormRegister<any>;
   onClickSave: (isPublish: boolean) => void;
   onClickDelete?: () => void;

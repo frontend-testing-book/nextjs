@@ -1,6 +1,7 @@
 import { HttpError } from '@/lib/error';
-import * as MyProfile from '../';
+
 import { getMyProfileData } from './fixture';
+import * as MyProfile from '../';
 
 jest.mock('../');
 

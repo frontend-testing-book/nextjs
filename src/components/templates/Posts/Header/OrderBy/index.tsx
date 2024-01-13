@@ -1,5 +1,7 @@
-import { SelectFilterOption } from '@/components/molecules/SelectFilterOption';
 import { useRouter } from 'next/router';
+
+import { SelectFilterOption } from '@/components/molecules/SelectFilterOption';
+
 import styles from './styles.module.css';
 
 export const OrderBy = () => {
@@ -12,7 +14,9 @@ export const OrderBy = () => {
       selectProps={{
         defaultValue: orderBy,
         onChange: (event) => {
-          push({ query: { ...query, orderBy: event.currentTarget.value } });
+          void push({
+            query: { ...query, orderBy: event.currentTarget.value },
+          });
         },
       }}
       options={[

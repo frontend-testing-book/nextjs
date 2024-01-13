@@ -1,11 +1,12 @@
 import { render, screen } from '@testing-library/react';
 import userEvent from '@testing-library/user-event';
 import mockRouter from 'next-router-mock';
+
 import { NoItems } from './';
 
 const user = userEvent.setup();
 
-test('タイトル表示', async () => {
+test('タイトル表示', () => {
   render(<NoItems />);
   expect(
     screen.getByRole('heading', { name: '投稿記事がありません' }),

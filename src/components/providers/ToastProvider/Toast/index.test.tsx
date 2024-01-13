@@ -1,8 +1,9 @@
+import { render, screen } from '@testing-library/react';
+
 import {
   ToastProvider,
   ToastState,
 } from '@/components/providers/ToastProvider';
-import { render, screen } from '@testing-library/react';
 
 test('Succeed', () => {
   const state: ToastState = {

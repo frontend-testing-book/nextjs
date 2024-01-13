@@ -1,5 +1,6 @@
-import { AppPropsWithLayout } from '@/lib/next/type';
 import Head from 'next/head';
+
+import { AppPropsWithLayout } from '@/lib/next/type';
 import '../../public/styles/globals.css';
 
 function MyApp({ Component, pageProps }: AppPropsWithLayout) {
@@ -13,6 +14,7 @@ function MyApp({ Component, pageProps }: AppPropsWithLayout) {
         </Head>
         <Component {...pageProps} />
       </>,
+      // eslint-disable-next-line @typescript-eslint/no-unsafe-argument
       pageProps,
     ),
   );

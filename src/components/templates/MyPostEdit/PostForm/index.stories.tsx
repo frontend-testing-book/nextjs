@@ -1,7 +1,9 @@
-import { BasicLayoutDecorator, PCStory } from '@/tests/storybook';
 import { expect } from '@storybook/jest';
 import { ComponentMeta, ComponentStoryObj } from '@storybook/react';
 import { userEvent as user, waitFor, within } from '@storybook/testing-library';
+
+import { BasicLayoutDecorator, PCStory } from '@/tests/storybook';
+
 import { PostForm } from './';
 
 export default {

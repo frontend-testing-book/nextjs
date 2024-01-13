@@ -8,72 +8,72 @@
   transition-duration: 0.2s;
 }
 
-.module[data-variant="small"] {
+.module[data-variant='small'] {
   font-size: 1.2rem;
 }
 
-.module[data-variant="medium"] {
+.module[data-variant='medium'] {
   font-size: 1.6rem;
 }
 
-.module[data-variant="large"] {
+.module[data-variant='large'] {
   font-size: 2rem;
 }
 
-.module[data-theme="dark"] {
+.module[data-theme='dark'] {
   color: var(--white);
   border: 2px solid var(--light-gray);
   background-color: var(--gray);
 }
 
-.module[data-theme="dark"]:hover {
+.module[data-theme='dark']:hover {
   border-color: var(--white);
   background-color: var(--dark-navy);
 }
 
-.module[data-theme="light"] {
+.module[data-theme='light'] {
   color: var(--white);
   border: 2px solid var(--middle-gray);
   background-color: var(--middle-gray);
 }
 
-.module[data-theme="light"]:hover {
+.module[data-theme='light']:hover {
   color: var(--light-gray);
   background-color: var(--white);
 }
 
-.module[data-theme="transparent"] {
+.module[data-theme='transparent'] {
   color: var(--light-gray);
   border: 2px solid transparent;
   background-color: transparent;
 }
 
-.module[data-theme="transparent"]:hover {
+.module[data-theme='transparent']:hover {
   color: var(--white);
 }
 
-.module[data-theme="blue"] {
+.module[data-theme='blue'] {
   color: var(--white);
   border: 2px solid var(--light-gray);
   background-color: var(--blue);
 }
 
-.module[data-theme="blue"]:hover {
+.module[data-theme='blue']:hover {
   border-color: var(--white);
   background-color: var(--vivid-blue);
 }
 
-.module[data-theme="error"] {
+.module[data-theme='error'] {
   color: var(--orange);
   border: 2px solid var(--orange);
   background-color: var(--dark-navy);
 }
 
-.module[data-theme="error"] path {
+.module[data-theme='error'] path {
   fill: var(--orange);
 }
 
-.module[data-theme="error"]:hover {
+.module[data-theme='error']:hover {
   color: var(--vivid-orange);
   border-color: var(--vivid-orange);
 }
@@ -84,15 +84,15 @@
 }
 
 @media screen and (max-width: 767px) {
-  .module[data-variant="small"] {
+  .module[data-variant='small'] {
     font-size: 1.2rem;
   }
 
-  .module[data-variant="medium"] {
+  .module[data-variant='medium'] {
     font-size: 1.4rem;
   }
 
-  .module[data-variant="large"] {
+  .module[data-variant='large'] {
     font-size: 1.6rem;
   }
 }

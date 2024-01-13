@@ -1,10 +1,13 @@
+import { render, screen, waitFor } from '@testing-library/react';
+import { useForm } from 'react-hook-form';
+
 import { BasicLayout } from '@/components/layouts/BasicLayout';
+
 import { PutInput } from '@/pages/api/my/profile/edit';
 import { handleGetMyProfile } from '@/services/client/MyProfile/__mock__/msw';
 import { mockUploadImage } from '@/services/client/UploadImage/__mock__/jest';
 import { selectImageFile, setupMockServer } from '@/tests/jest';
-import { render, screen, waitFor } from '@testing-library/react';
-import { useForm } from 'react-hook-form';
+
 import { Avatar } from '.';
 
 function TestComponent() {

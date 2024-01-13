@@ -1,6 +1,7 @@
 import { ErrorStatus, HttpError } from '@/lib/error';
-import * as UploadImage from '../fetcher';
+
 import { uploadImageData } from './fixture';
+import * as UploadImage from '../fetcher';
 
 jest.mock('../fetcher');
 

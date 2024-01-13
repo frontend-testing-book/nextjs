@@ -1,5 +1,6 @@
-import { UnauthorizedError } from '@/lib/error';
 import * as z from 'zod';
+
+import { UnauthorizedError } from '@/lib/error';
 
 export const LoginUserSchema = z.object({
   id: z.number().min(1),

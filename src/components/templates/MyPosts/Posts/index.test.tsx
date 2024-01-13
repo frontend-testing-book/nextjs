@@ -1,8 +1,10 @@
+import { render, screen } from '@testing-library/react';
+
 import {
   getMyPostsData,
   getMyPostsEmptyData,
 } from '@/services/server/MyPosts/__mock__/fixture';
-import { render, screen } from '@testing-library/react';
+
 import { Posts } from './';
 
 const setup = (empty = false) => {
@@ -22,14 +24,14 @@ const setup = (empty = false) => {
   return { PostList, pagination, paginationInfo, noItems };
 };
 
-test('アクセシブルネーム「投稿記事一覧」で識別できる', async () => {
+test('アクセシブルネーム「投稿記事一覧」で識別できる', () => {
   setup();
   expect(
     screen.getByRole('region', { name: '投稿記事一覧' }),
   ).toBeInTheDocument();
 });
 
-test('記事一覧があるとき、コンテンツが表示される', async () => {
+test('記事一覧があるとき、コンテンツが表示される', () => {
   const { PostList, pagination, paginationInfo, noItems } = setup();
   expect(PostList).toBeInTheDocument();
   expect(pagination).toBeInTheDocument();
@@ -37,7 +39,7 @@ test('記事一覧があるとき、コンテンツが表示される', async ()
   expect(noItems).not.toBeInTheDocument();
 });
 
-test('記事一覧が空のとき、記事がない旨が表示される', async () => {
+test('記事一覧が空のとき、記事がない旨が表示される', () => {
   const { PostList, pagination, paginationInfo, noItems } = setup(true);
   expect(PostList).not.toBeInTheDocument();
   expect(pagination).not.toBeInTheDocument();

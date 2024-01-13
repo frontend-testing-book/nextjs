@@ -1,5 +1,6 @@
 import { render, screen } from '@testing-library/react';
 import userEvent from '@testing-library/user-event';
+
 import { SelectFilterOption } from './';
 
 const user = userEvent.setup();
@@ -24,7 +25,7 @@ function setup() {
   return { title, options, combobox, select };
 }
 
-test('select 要素は title をアクセシブルネームとして参照する', async () => {
+test('select 要素は title をアクセシブルネームとして参照する', () => {
   const { title, combobox } = setup();
   expect(combobox).toHaveAccessibleName(title);
 });

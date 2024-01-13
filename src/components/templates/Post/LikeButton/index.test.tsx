@@ -1,10 +1,13 @@
+import { render, screen, waitFor } from '@testing-library/react';
+import userEvent from '@testing-library/user-event';
+
 import { ToastProvider } from '@/components/providers/ToastProvider';
+
 import {
   mockPostLikeRejected,
   mockPostLikeResolved,
 } from '@/services/client/Like/__mock__/jest';
-import { render, screen, waitFor } from '@testing-library/react';
-import userEvent from '@testing-library/user-event';
+
 import { LikeButton } from './';
 
 const user = userEvent.setup();
@@ -32,17 +35,17 @@ const setup = ({ likeCount, liked, isMyPost, isLoggedIn } = defaultArgs) => {
   return { click, button };
 };
 
-test('Like 済みの場合、ボタンは非活性', async () => {
+test('Like 済みの場合、ボタンは非活性', () => {
   const { button } = setup({ ...defaultArgs, liked: true });
   expect(button).toBeDisabled();
 });
 
-test('自分の投稿の場合、ボタンは非活性', async () => {
+test('自分の投稿の場合、ボタンは非活性', () => {
   const { button } = setup({ ...defaultArgs, isMyPost: true });
   expect(button).toBeDisabled();
 });
 
-test('未ログインの投稿の場合、ボタンは非活性', async () => {
+test('未ログインの投稿の場合、ボタンは非活性', () => {
   const { button } = setup({ ...defaultArgs, isLoggedIn: false });
   expect(button).toBeDisabled();
 });

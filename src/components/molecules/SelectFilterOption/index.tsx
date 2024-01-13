@@ -1,7 +1,8 @@
 import clsx from 'clsx';
 import { ComponentProps, useId } from 'react';
-import { Combobox } from '../Combobox';
+
 import styles from './styles.module.css';
+import { Combobox } from '../Combobox';
 
 export const SelectFilterOption = ({
   title,

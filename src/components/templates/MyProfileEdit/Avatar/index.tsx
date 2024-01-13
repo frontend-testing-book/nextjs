@@ -1,13 +1,16 @@
-import { InputFileButton } from '@/components/atoms/InputFileButton';
-import { useUploadImage } from '@/components/hooks/useUploadImage';
-import { useToastAction } from '@/components/providers/ToastProvider';
-import { PutInput } from '@/pages/api/my/profile/edit';
 import {
   FieldValues,
   Path,
   UseFormRegister,
   UseFormSetValue,
 } from 'react-hook-form';
+
+import { InputFileButton } from '@/components/atoms/InputFileButton';
+import { useUploadImage } from '@/components/hooks/useUploadImage';
+import { useToastAction } from '@/components/providers/ToastProvider';
+
+import { PutInput } from '@/pages/api/my/profile/edit';
+
 import styles from './styles.module.css';
 
 type Props<T extends FieldValues = PutInput> = {

@@ -1,6 +1,7 @@
 import { HttpError } from '@/lib/error';
-import * as MyProfileEdit from '..';
+
 import { updateMyProfileEditData } from './fixture';
+import * as MyProfileEdit from '..';
 
 jest.mock('../');
 

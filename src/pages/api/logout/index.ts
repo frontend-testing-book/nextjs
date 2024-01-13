@@ -1,9 +1,9 @@
-import { getSession } from '@/lib/next-session';
 import {
   ApiHandler,
   handleApiRouteError,
   handleNotAllowed,
 } from '@/lib/next/api';
+import { getSession } from '@/lib/next-session';
 
 export type PostReturn = { message: string };
 
@@ -17,7 +17,7 @@ const handlePost: ApiHandler<PostReturn> = async (req, res) => {
   }
 };
 
-const handler: ApiHandler<PostReturn> = async (req, res) => {
+const handler: ApiHandler<PostReturn> = (req, res) => {
   switch (req.method) {
     case 'POST':
       return handlePost(req, res);

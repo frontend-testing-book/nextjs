@@ -1,4 +1,5 @@
 import clsx from 'clsx';
+
 import styles from './styles.module.css';
 import { useLikeButton } from './useLikeButton';
 
@@ -12,6 +13,7 @@ export const LikeButton = (props: Props) => {
   const { isLiked, isDisabled, localLikeCount, onSubmit } =
     useLikeButton(props);
   return (
+    // eslint-disable-next-line @typescript-eslint/no-misused-promises
     <form className={styles.form} onSubmit={onSubmit}>
       <button
         aria-label="Like"

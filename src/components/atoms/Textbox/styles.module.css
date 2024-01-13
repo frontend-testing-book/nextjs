@@ -15,7 +15,7 @@
   border-color: var(--light-gray);
 }
 
-.module[aria-invalid="true"] {
+.module[aria-invalid='true'] {
   border-color: var(--orange);
 }
 

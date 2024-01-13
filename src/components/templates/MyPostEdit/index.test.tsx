@@ -1,16 +1,18 @@
-import * as MyPost from '@/services/client/MyPost/__mock__/msw';
-import * as MyProfile from '@/services/client/MyProfile/__mock__/msw';
-import { setupMockServer } from '@/tests/jest';
-import { composeStories } from '@storybook/testing-react';
+import { composeStories } from '@storybook/react';
 import { render, screen, waitFor } from '@testing-library/react';
 import userEvent from '@testing-library/user-event';
 import mockRouter from 'next-router-mock';
+
+import * as MyPost from '@/services/client/MyPost/__mock__/msw';
+import * as MyProfile from '@/services/client/MyProfile/__mock__/msw';
+import { setupMockServer } from '@/tests/jest';
+
 import * as stories from './index.stories';
 
 const { Default } = composeStories(stories);
 const user = userEvent.setup();
 
-async function setup() {
+function setup() {
   render(<Default />);
   async function clearTitle() {
     await user.clear(screen.getByRole('textbox', { name: '記事タイトル' }));
@@ -45,14 +47,14 @@ beforeEach(() => {
 
 describe('AlertDialog', () => {
   test('「いいえ」を押下すると、AlertDialog が閉じる', async () => {
-    const { saveAsPublished, clickButton } = await setup();
+    const { saveAsPublished, clickButton } = setup();
     await saveAsPublished();
     await clickButton('いいえ');
     expect(screen.queryByRole('alertdialog')).not.toBeInTheDocument();
   });
 
   test('不適正内容で送信を試みると、AlertDialog が閉じる', async () => {
-    const { clearTitle, saveAsPublished, clickButton } = await setup();
+    const { clearTitle, saveAsPublished, clickButton } = setup();
     await clearTitle();
     await saveAsPublished();
     await clickButton('はい');
@@ -64,7 +66,7 @@ describe('AlertDialog', () => {
 
 describe('Toast', () => {
   test('公開に成功した場合「公開に成功しました」が表示される', async () => {
-    const { saveAsPublished, clickButton } = await setup();
+    const { saveAsPublished, clickButton } = setup();
     await saveAsPublished();
     await clickButton('はい');
     await waitFor(() =>
@@ -74,7 +76,7 @@ describe('Toast', () => {
 
   test('公開に失敗した場合「公開に失敗しました」が表示される', async () => {
     server.use(MyPost.handlePutMyPost({ status: 500 }));
-    const { saveAsPublished, clickButton } = await setup();
+    const { saveAsPublished, clickButton } = setup();
     await saveAsPublished();
     await clickButton('はい');
     await waitFor(() =>
@@ -83,7 +85,7 @@ describe('Toast', () => {
   });
 
   test('削除に成功した場合「削除に成功しました」が表示される', async () => {
-    const { deletePost, clickButton } = await setup();
+    const { deletePost, clickButton } = setup();
     await deletePost();
     await clickButton('はい');
     await waitFor(() =>
@@ -93,7 +95,7 @@ describe('Toast', () => {
 
   test('削除に失敗した場合「削除に失敗しました」が表示される', async () => {
     server.use(MyPost.handleDeleteMyPost({ status: 500 }));
-    const { deletePost, clickButton } = await setup();
+    const { deletePost, clickButton } = setup();
     await deletePost();
     await clickButton('はい');
     await waitFor(() =>
@@ -104,7 +106,7 @@ describe('Toast', () => {
 
 describe('画面遷移', () => {
   test('公開に成功した場合、画面遷移する', async () => {
-    const { saveAsPublished, clickButton } = await setup();
+    const { saveAsPublished, clickButton } = setup();
     await saveAsPublished();
     await clickButton('はい');
     await waitFor(() =>
@@ -113,7 +115,7 @@ describe('画面遷移', () => {
   });
 
   test('削除に成功した場合、画面遷移する', async () => {
-    const { deletePost, clickButton } = await setup();
+    const { deletePost, clickButton } = setup();
     await deletePost();
     await clickButton('はい');
     await waitFor(() =>

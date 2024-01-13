@@ -1,6 +1,8 @@
-import { Button } from '@/components/atoms/Button';
 import clsx from 'clsx';
 import { ComponentProps, forwardRef } from 'react';
+
+import { Button } from '@/components/atoms/Button';
+
 import styles from './styles.module.css';
 
 type Props = {

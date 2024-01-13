@@ -1,7 +1,9 @@
-import { PutInput } from '@/pages/api/my/posts/[postId]';
 import { ComponentMeta, ComponentStoryObj } from '@storybook/react';
 import { ComponentPropsWithoutRef } from 'react';
 import { useForm } from 'react-hook-form';
+
+import { PutInput } from '@/pages/api/my/posts/[postId]';
+
 import { PostFormFooter } from './';
 
 function TestComponent(

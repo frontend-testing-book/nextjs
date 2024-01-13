@@ -1,13 +1,16 @@
-import * as ApiLogout from '@/pages/api/logout';
 import { rest } from 'msw';
-import { path } from '..';
+
+import * as ApiLogout from '@/pages/api/logout';
+
 import { data } from './fixture';
+import { path } from '..';
 
 export function handlePostLogout(args?: {
+  // eslint-disable-next-line @typescript-eslint/no-explicit-any
   mock?: jest.Mock<any, any>;
   status?: number;
 }) {
-  return rest.post<{}, {}, ApiLogout.PostReturn>(
+  return rest.post<object, object, ApiLogout.PostReturn>(
     path(),
     async (_, res, ctx) => {
       args?.mock?.();

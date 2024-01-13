@@ -1,10 +1,12 @@
-import { composeStories } from '@storybook/testing-react';
+import { composeStories } from '@storybook/react';
 import { render, screen } from '@testing-library/react';
-import { TextboxWithInfo } from '.';
+
 import * as stories from './index.stories';
+
+import { TextboxWithInfo } from '.';
 const { FullProps } = composeStories(stories);
 
-test('TextboxWithInfo', async () => {
+test('TextboxWithInfo', () => {
   render(<FullProps />);
   expect(screen.getByRole('textbox')).toHaveAccessibleName('記事タイトル');
   expect(screen.getByRole('textbox')).toHaveAccessibleDescription(
@@ -15,7 +17,7 @@ test('TextboxWithInfo', async () => {
   );
 });
 
-test('TextboxWithInfo', async () => {
+test('TextboxWithInfo', () => {
   const args = {
     title: '記事タイトル',
     info: '0 / 64',

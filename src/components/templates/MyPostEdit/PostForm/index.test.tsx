@@ -1,9 +1,11 @@
+import { composeStories } from '@storybook/react';
+import { render, screen, waitFor } from '@testing-library/react';
+import userEvent from '@testing-library/user-event';
+
 import { handleGetMyProfile } from '@/services/client/MyProfile/__mock__/msw';
 import { mockUploadImage } from '@/services/client/UploadImage/__mock__/jest';
 import { selectImageFile, setupMockServer } from '@/tests/jest';
-import { composeStories } from '@storybook/testing-react';
-import { render, screen, waitFor } from '@testing-library/react';
-import userEvent from '@testing-library/user-event';
+
 import * as stories from './index.stories';
 
 const { Default } = composeStories(stories);

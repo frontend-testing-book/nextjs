@@ -4,7 +4,9 @@ import { ContentFooter } from '@/components/molecules/ContentFooter';
 import { ContentHeader } from '@/components/molecules/ContentHeader';
 import { TextareaWithInfo } from '@/components/molecules/TextareaWithInfo';
 import { TextboxWithInfo } from '@/components/molecules/TextboxWithInfo';
+
 import { GetMyProfileEditReturn } from '@/services/server/MyProfileEdit';
+
 import { Avatar } from './Avatar';
 import styles from './styles.module.css';
 import { useMyProfileEdit } from './useMyProfileEdit';
@@ -17,6 +19,7 @@ export const MyProfileEdit = (props: Props) => {
   const { register, setValue, onSubmit, control, errors } =
     useMyProfileEdit(props);
   return (
+    // eslint-disable-next-line @typescript-eslint/no-misused-promises
     <form className={styles.module} onSubmit={onSubmit}>
       <ContentHeader
         title="プロフィール編集"

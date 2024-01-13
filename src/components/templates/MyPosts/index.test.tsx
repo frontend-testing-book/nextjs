@@ -1,8 +1,10 @@
+import { composeStories } from '@storybook/react';
+import { render, screen } from '@testing-library/react';
+
 import { handleGetMyProfile } from '@/services/client/MyProfile/__mock__/msw';
 import { getMyPostsData } from '@/services/server/MyPosts/__mock__/fixture';
 import { setupMockServer } from '@/tests/jest';
-import { composeStories } from '@storybook/testing-react';
-import { render, screen } from '@testing-library/react';
+
 import * as stories from './index.stories';
 
 const { Default } = composeStories(stories);

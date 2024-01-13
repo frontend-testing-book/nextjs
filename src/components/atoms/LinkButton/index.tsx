@@ -1,5 +1,6 @@
 import clsx from 'clsx';
 import Link from 'next/link';
+
 import styles from './styles.module.css';
 
 type Props = {

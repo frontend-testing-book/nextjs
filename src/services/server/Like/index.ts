@@ -1,4 +1,5 @@
 import { NotFoundError } from '@/lib/error';
+
 import { handlePrismaError, prisma } from '..';
 
 export async function postLike(input: { userId: number; postId: number }) {

@@ -1,4 +1,5 @@
 import { NotFoundError } from '@/lib/error';
+
 import { handlePrismaError, prisma } from '..';
 
 export async function getPost({ postId }: { postId: number }) {
@@ -8,7 +9,7 @@ export async function getPost({ postId }: { postId: number }) {
       include: { likes: true },
     });
     if (!data) throw new NotFoundError();
-    const { createdAt, updatedAt, likes, ...res } = data;
+    const { likes, ...res } = data;
     const likeCount = likes.length;
     const liked = likes.some((l) => l.postId === postId);
     return { ...res, likeCount, liked };

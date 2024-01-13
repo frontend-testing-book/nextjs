@@ -1,9 +1,12 @@
+import { zodResolver } from '@hookform/resolvers/zod';
+import { useForm } from 'react-hook-form';
+
 import { Button } from '@/components/atoms/Button';
 import { TextboxWithError } from '@/components/molecules/TextboxWithError';
 import { useToastAction } from '@/components/providers/ToastProvider';
+
 import { Input, InputSchema, postLogin } from '@/services/client/Login';
-import { zodResolver } from '@hookform/resolvers/zod';
-import { useForm } from 'react-hook-form';
+
 import styles from './styles.module.css';
 
 const defaultValues: Input = {
@@ -24,6 +27,7 @@ export const Login = () => {
   return (
     <form
       className={styles.module}
+      // eslint-disable-next-line @typescript-eslint/no-misused-promises
       onSubmit={handleSubmit(async (values) => {
         try {
           const data = await postLogin(values);

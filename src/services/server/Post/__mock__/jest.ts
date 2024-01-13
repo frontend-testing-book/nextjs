@@ -1,6 +1,7 @@
 import { HttpError } from '@/lib/error';
-import * as Post from '../';
+
 import { getPostData } from './fixture';
+import * as Post from '../';
 
 jest.mock('../');
 

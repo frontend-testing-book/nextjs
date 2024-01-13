@@ -1,11 +1,12 @@
 import { render, screen } from '@testing-library/react';
 import userEvent from '@testing-library/user-event';
 import mockRouter from 'next-router-mock';
+
 import { Heading } from './';
 
 const user = userEvent.setup();
 
-test('[role=heading]', async () => {
+test('[role=heading]', () => {
   render(<Heading />);
   expect(
     screen.getByRole('heading', { name: 'Tech Posts' }),

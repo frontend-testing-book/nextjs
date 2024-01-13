@@ -4,8 +4,10 @@ import {
   ComponentStoryObj,
   ReactRenderer,
 } from '@storybook/react';
-import { AlertDialog, AlertDialogProvider } from './';
+
 import { AlertDialogState } from './AlertDialogContext';
+
+import { AlertDialog, AlertDialogProvider } from './';
 
 function createDecorator(defaultState?: Partial<AlertDialogState>) {
   return function Decorator(Story: PartialStoryFn<ReactRenderer, Args>) {

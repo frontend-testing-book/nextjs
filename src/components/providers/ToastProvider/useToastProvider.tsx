@@ -1,4 +1,5 @@
 import { useCallback, useState } from 'react';
+
 import { initialState, ToastState } from './ToastContext';
 
 export function useToastProvider(defaultState?: Partial<ToastState>) {

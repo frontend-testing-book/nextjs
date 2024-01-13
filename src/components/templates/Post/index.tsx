@@ -1,7 +1,9 @@
 import { ContentHeader } from '@/components/molecules/ContentHeader';
 import { Markdown } from '@/components/organisms/Markdown';
+
 import { LoginUser } from '@/lib/schema/LoginUser';
 import { GetPostReturn } from '@/services/server/Post';
+
 import { LikeButton } from './LikeButton';
 import styles from './styles.module.css';
 

@@ -1,7 +1,9 @@
-import { getMyPostsData } from '@/services/server/MyPosts/__mock__/fixture';
 import { render, screen } from '@testing-library/react';
 import userEvent from '@testing-library/user-event';
 import mockRouter from 'next-router-mock';
+
+import { getMyPostsData } from '@/services/server/MyPosts/__mock__/fixture';
+
 import { PostItem } from './';
 
 const user = userEvent.setup();
@@ -14,9 +16,9 @@ const setup = (published = true) => {
   return { post, link, click };
 };
 
-test('リンクのアクセシブルネームはタイトルを参照する', async () => {
+test('リンクのアクセシブルネームはタイトルを参照する', () => {
   // <a>要素に aria-label を設定しない場合、内包テキスト全文がアクセシブルネームになってしまう
-  // aria-label　に post.title を適用し、端的なアクセシブルネームとしている
+  // aria-label に post.title を適用し、端的なアクセシブルネームとしている
   const { post, link } = setup();
   expect(link).toHaveAccessibleName(post.title);
 });

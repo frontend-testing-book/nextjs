@@ -1,8 +1,10 @@
-import { PutInput } from '@/pages/api/my/posts/[postId]';
 import { render } from '@testing-library/react';
 import userEvent from '@testing-library/user-event';
 import { ComponentPropsWithoutRef } from 'react';
 import { useForm } from 'react-hook-form';
+
+import { PutInput } from '@/pages/api/my/posts/[postId]';
+
 import { PostFormFooter } from './';
 
 const user = userEvent.setup();
@@ -67,7 +69,7 @@ test('「記事を削除する」ボタンを押下すると、イベントハ�
   expect(onClickDelete).toHaveBeenCalled();
 });
 
-test('送信中は全てのコントロールが非活性', async () => {
+test('送信中は全てのコントロールが非活性', () => {
   const { getByRole } = setup(true);
   expect(getByRole('switch', { name: '公開ステータス' })).toBeDisabled();
   expect(getByRole('button', { name: '記事を削除する' })).toBeDisabled();

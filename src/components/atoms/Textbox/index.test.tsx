@@ -1,4 +1,5 @@
 import { render, screen } from '@testing-library/react';
+
 import { Textbox } from '.';
 
 test("[role='textbox']", () => {
@@ -6,7 +7,7 @@ test("[role='textbox']", () => {
   expect(screen.getByRole('textbox')).toBeInTheDocument();
 });
 
-test("[role='textbox'][disabled='true']", async () => {
+test("[role='textbox'][disabled='true']", () => {
   render(<Textbox disabled />);
   expect(screen.getByRole('textbox')).toBeDisabled();
 });

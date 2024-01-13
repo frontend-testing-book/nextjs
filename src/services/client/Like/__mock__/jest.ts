@@ -1,6 +1,7 @@
 import { HttpError } from '@/lib/error';
-import * as Like from '../fetcher';
+
 import { data } from './fixture';
+import * as Like from '../fetcher';
 
 jest.mock('../fetcher');
 

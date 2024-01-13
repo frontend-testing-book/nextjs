@@ -1,6 +1,8 @@
+import { ComponentMeta, ComponentStoryObj } from '@storybook/react';
+
 import { getMyPostData } from '@/services/server/MyPost/__mock__/fixture';
 import { BasicLayoutDecorator, PCStory, SPStory } from '@/tests/storybook';
-import { ComponentMeta, ComponentStoryObj } from '@storybook/react';
+
 import { MyPost } from './';
 
 export default {

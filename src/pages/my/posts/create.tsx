@@ -1,6 +1,7 @@
 import { BasicLayout } from '@/components/layouts/BasicLayout';
 import { PageTitle } from '@/components/meta';
 import { MyPostsCreate } from '@/components/templates/MyPostsCreate';
+
 import { withLogin } from '@/lib/next/gssp';
 import { NextPageWithLayout } from '@/lib/next/type';
 
@@ -10,6 +11,7 @@ const Page: NextPageWithLayout = () => {
 Page.getLayout = BasicLayout;
 Page.getPageTitle = PageTitle(() => '新規記事作成');
 
+// eslint-disable-next-line @typescript-eslint/require-await
 export const getServerSideProps = withLogin(async () => {
   return {};
 });

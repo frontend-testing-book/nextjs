@@ -1,11 +1,13 @@
+import { rest } from 'msw';
+
 import { HttpError } from '@/lib/error';
 import * as ApiLogin from '@/pages/api/login';
-import { rest } from 'msw';
-import { Input, path } from '..';
+
 import { data } from './fixture';
+import { Input, path } from '..';
 
 export function handlePostLogin() {
-  return rest.post<Input, {}, ApiLogin.PostReturn>(
+  return rest.post<Input, object, ApiLogin.PostReturn>(
     path(),
     async (req, res, ctx) => {
       const body: Input = await req.json();

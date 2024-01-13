@@ -1,12 +1,15 @@
+import { render, screen } from '@testing-library/react';
+import userEvent from '@testing-library/user-event';
+
 import { mockUseToastAction } from '@/components/providers/ToastProvider/__mock__/hooks';
+
 import {
   mockPostLogoutRejected,
   mockPostLogoutResolved,
 } from '@/services/client/Logout/__mock__/jest';
 import { getMyProfileData } from '@/services/client/MyProfile/__mock__/fixture';
 import { mockWindowLocationReload } from '@/tests/jest';
-import { render, screen } from '@testing-library/react';
-import userEvent from '@testing-library/user-event';
+
 import { LoginUser } from './';
 
 const user = userEvent.setup();
@@ -30,6 +33,7 @@ test('ログアウトに成功すると、リロードされる', async () => {
   await clickLogout();
   expect(mock).toHaveBeenCalled();
   expect(showToast).not.toHaveBeenCalled();
+  // eslint-disable-next-line @typescript-eslint/unbound-method
   expect(window.location.reload).toHaveBeenCalled();
 });
 
@@ -39,5 +43,6 @@ test('ログアウトに失敗すると、Toast が表示される', async () =>
   await clickLogout();
   expect(mock).toHaveBeenCalled();
   expect(showToast).toHaveBeenCalled();
+  // eslint-disable-next-line @typescript-eslint/unbound-method
   expect(window.location.reload).not.toHaveBeenCalled();
 });

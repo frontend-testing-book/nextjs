@@ -1,7 +1,9 @@
 import { getSession } from '@/lib/next-session';
 import { assertAsUser, LoginUser } from '@/lib/schema/LoginUser';
-import type { GetServerSidePropsContext } from 'next';
+
 import { HttpError, UnauthorizedError } from '../error';
+
+import type { GetServerSidePropsContext } from 'next';
 
 type WithLoginNextFn<T> = (
   ctx: GetServerSidePropsContext & { user: LoginUser },
@@ -35,6 +37,7 @@ export function withoutLogin<T>(next: WithoutLoginNextFn<T>) {
   return async (ctx: GetServerSidePropsContext) => {
     const session = await getSession(ctx.req, ctx.res);
     try {
+      // eslint-disable-next-line @typescript-eslint/no-unsafe-assignment
       const data = await next({ ...ctx, user: session?.user || null });
       return { props: { data, err: null } };
     } catch (err) {

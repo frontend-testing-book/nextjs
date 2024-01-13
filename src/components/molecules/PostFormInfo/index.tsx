@@ -1,13 +1,16 @@
-import { WatchCounter } from '@/components/atoms/WatchCounter';
-import { TextareaWithInfo } from '@/components/molecules/TextareaWithInfo';
-import { TextboxWithInfo } from '@/components/molecules/TextboxWithInfo';
-import { PutInput } from '@/pages/api/my/posts/[postId]';
 import {
   Control,
   FieldErrors,
   FieldValues,
   UseFormRegister,
 } from 'react-hook-form';
+
+import { WatchCounter } from '@/components/atoms/WatchCounter';
+import { TextareaWithInfo } from '@/components/molecules/TextareaWithInfo';
+import { TextboxWithInfo } from '@/components/molecules/TextboxWithInfo';
+
+import { PutInput } from '@/pages/api/my/posts/[postId]';
+
 import styles from './styles.module.css';
 
 type Props<T extends FieldValues = PutInput> = {

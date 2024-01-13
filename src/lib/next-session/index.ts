@@ -1,5 +1,6 @@
-import RedisStoreFactory from 'connect-redis';
 import { IncomingMessage, ServerResponse } from 'http';
+
+import RedisStoreFactory from 'connect-redis';
 import Redis from 'ioredis';
 import nextSession, { SessionStore } from 'next-session';
 import { expressSession, promisifyStore } from 'next-session/lib/compat';
@@ -15,7 +16,7 @@ export const getSession = (
   if (!store) {
     store = promisifyStore(
       new RedisStore({
-        // @ts-ignore TS2322
+        // @ts-expect-error TS2322
         client: new Redis({
           port: Number(process.env.REDIS_PORT),
           host: process.env.REDIS_HOST || '',

@@ -1,8 +1,10 @@
+import { rest } from 'msw';
+
 import { HttpError } from '@/lib/error';
 import * as ApiMyProfileEdit from '@/pages/api/my/profile/edit';
-import { rest } from 'msw';
-import { path } from '..';
+
 import { updateMyProfileEditData } from './fixture';
+import { path } from '..';
 
 export function handleCreateMyProfile() {
   return rest.put(path(), async (req, res, ctx) => {

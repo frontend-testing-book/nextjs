@@ -24,7 +24,7 @@
   background-color: var(--dark-navy);
 }
 
-.pagination li a[aria-current="page"] {
+.pagination li a[aria-current='page'] {
   background-color: var(--dark-navy);
 }
 

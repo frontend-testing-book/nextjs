@@ -1,5 +1,6 @@
-import { ApiHandler, handleNotAllowed, withLogin } from '@/lib/next/api';
 import S3 from 'aws-sdk/clients/s3';
+
+import { ApiHandler, handleNotAllowed, withLogin } from '@/lib/next/api';
 
 const s3 = new S3({
   accessKeyId: process.env.AWS_ACCESS_KEY_ID,
@@ -7,8 +8,8 @@ const s3 = new S3({
   endpoint: process.env.AWS_S3_ENDPOINT,
 });
 
-const handleGet = withLogin(async (req, res) => {
-  const post = await s3.createPresignedPost({
+const handleGet = withLogin((req, res) => {
+  const post = s3.createPresignedPost({
     Bucket: 'images',
     Fields: {
       key: req.query.file,

@@ -1,7 +1,9 @@
 import { Button } from '@/components/atoms/Button';
 import { useToastAction } from '@/components/providers/ToastProvider';
+
 import { postLogout } from '@/services/client/Logout';
 import { GetMyProfileReturn } from '@/services/server/MyProfile';
+
 import styles from './styles.module.css';
 
 type Props = GetMyProfileReturn;
@@ -25,6 +27,7 @@ export const LoginUser = ({ name, imageUrl }: Props) => {
             <Button
               theme="transparent"
               variant="small"
+              // eslint-disable-next-line @typescript-eslint/no-misused-promises
               onClick={async () => {
                 try {
                   await postLogout();

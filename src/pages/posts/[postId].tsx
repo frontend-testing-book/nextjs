@@ -2,6 +2,7 @@ import { BasicLayout } from '@/components/layouts/BasicLayout';
 import { PageTitle } from '@/components/meta';
 import { Error } from '@/components/templates/Error';
 import { Post } from '@/components/templates/Post';
+
 import { withoutLogin } from '@/lib/next/gssp';
 import { NextPageWithGsspResult } from '@/lib/next/type';
 import { LoginUser } from '@/lib/schema/LoginUser';
